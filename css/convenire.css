@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #444444;
+  -webkit-text-size-adjust: none;
+}
+
+.heading,
+.body,
+.hero,
+.footer {
+  width: 1100px;
+  margin: 0 auto;
+  height: 200px;
+}
+
+.heading {
+  height: 127px;
+  background: url("../images/bg-heading.jpg") 0 0 no-repeat;
+  position: relative;
+}
+.heading h1 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 30px;
+  left: 30px;
+}
+.heading .logo a {
+  display: block;
+  text-indent: -9000px;
+  width: 190px;
+  height: 72px;
+  background: url("../images/logo-convsite.png") 0 0 no-repeat;
+}
+.heading .login-form {
+  position: absolute;
+  content: "";
+  clear: both;
+  display: block;
+  top: 0;
+  right: 120px;
+}
+.heading .login-link {
+  float: left;
+  padding-top: 18px;
+  font-size: 0.9em;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.heading .login-link:hover {
+  color: #666666;
+}
+.heading .social-navigation {
+  float: left;
+  margin: 0 0 0 10px;
+  padding: 10px 0 0 10px;
+  list-style: none;
+  border-left: 1px solid #00cc66;
+}
+.heading .social-navigation li {
+  float: left;
+  padding-right: 5px;
+}
+.heading .social-navigation a {
+  color: #00cc66;
+  font-size: 2.0em;
+  line-height: 100%;
+}
+
+.strip {
+  background-color: #f2f2f2;
+}
