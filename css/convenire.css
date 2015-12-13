@@ -5,6 +5,16 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+@font-face {
+  font-family: 'GillSans-Regular';
+  src: url("fonts/GillSans_gdi.eot");
+  src: url("fonts/GillSans_gdi.eot?#iefix") format("embedded-opentype"), url("fonts/GillSans_gdi.woff") format("woff"), url("fonts/GillSans_gdi.ttf") format("truetype"), url("fonts/GillSans_gdi.svg#GillSans-Regular") format("svg");
+  font-weight: 5;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2666;
+}
+
 .heading,
 .body,
 .hero,
@@ -67,6 +77,28 @@ body {
   color: #00cc66;
   font-size: 2.0em;
   line-height: 100%;
+}
+.heading .top-navigation {
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'GillSans-Regular';
+  font-size: 2.2em;
+  position: absolute;
+  top: 70px;
+  right: 80px;
+}
+.heading .top-navigation li {
+  float: left;
+  padding-right: 40px;
+}
+.heading .top-navigation li a {
+  text-decoration: none;
+  color: #000000;
+}
+.heading .top-navigation li a:hover {
+  color: #666666;
 }
 
 .strip {

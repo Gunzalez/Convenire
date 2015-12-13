@@ -344,7 +344,7 @@
 
     // main init
 	$(document).ready(function(){
-		convenire.init();
+		//convenire.init();
 	});
 
 }(jQuery, window));
