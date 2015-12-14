@@ -92,14 +92,14 @@ body {
   list-style: none;
   float: left;
   font-family: "GillSans-Regular";
-  font-size: 2.4em;
+  font-size: 2.3em;
   position: absolute;
-  top: 65px;
+  top: 67px;
   right: 30px;
 }
 .heading .top-navigation li {
   float: left;
-  padding-left: 50px;
+  padding-left: 55px;
 }
 .heading .top-navigation li a {
   text-decoration: none;
@@ -117,6 +117,7 @@ body {
   background: url("../images/bg-green-bar.png") top right no-repeat;
   width: 100%;
   height: 34px;
+  overflow: hidden;
 }
 .hero .green-bar p {
   padding: 0 30px;
@@ -151,4 +152,94 @@ body {
 }
 .hero .featured-navigation .active {
   border: 1px solid #999999;
+}
+.hero .featured-large img {
+  width: 100%;
+}
+.hero .featured-description {
+  height: 88px;
+  width: 845px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  padding-right: 101px;
+  background: url("../images/bg-description.png") top right no-repeat;
+  font-family: "GillSans-Regular";
+  padding-top: 12px;
+}
+.hero .featured-description h2, .hero .featured-description h3 {
+  margin: 0;
+  text-align: right;
+  line-height: 130%;
+  padding: 0 20px 0 190px;
+}
+.hero .featured-description h3 {
+  font-size: 1.4em;
+}
+.hero .featured-description .detail-link {
+  width: 86px;
+  height: 88px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url("../images/bg-arrow.png") 50% 50% no-repeat #00cc66;
+  text-indent: -9000px;
+}
+.hero .search {
+  background: url("../images/bg-search-form.png") 0 0 no-repeat;
+  width: 310px;
+  height: 373px;
+  position: absolute;
+  top: 34px;
+  left: 0;
+}
+.hero .search * {
+  outline: none;
+}
+.hero .search .row {
+  padding-bottom: 15px;
+  padding-left: 40px;
+}
+.hero .search label {
+  display: none;
+}
+.hero .search input[type="text"] {
+  border: none;
+  background: #ffffff;
+  padding: 3px 6px;
+  height: 28px;
+  box-sizing: border-box;
+  width: 160px;
+  font-family: "GillSans-Regular";
+}
+.hero .search button {
+  width: 100px;
+  height: 54px;
+  color: #ffffff;
+  font-family: "GillSans-Regular";
+  border: none;
+  background: url("../images/bg-arrow-fixed.png") center right no-repeat;
+  text-align: left;
+  line-height: 120%;
+  font-size: 1.2em;
+  margin-top: 1px;
+}
+.hero .search .advanced-link {
+  margin: 0 0 0 30px;
+  padding: 0;
+  font-size: 0.8em;
+  width: 60px;
+}
+.hero .search .advanced-link a {
+  color: #999999;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  text-decoration: underline;
+}
+.hero .search .advanced-link a:hover {
+  color: #666666;
+  text-decoration: none;
 }

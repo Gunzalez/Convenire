@@ -42,13 +42,34 @@
                 <p>International Conference Venue Review Service</p>
             </div>
             <div class="featured-large">
-                <img src="uploaded/dalian-large-4.jpg" width="1100" height="520" alt="Dalian International Conference Centre">
+                <img src="uploaded/dalian-large-4.jpg" alt="Dalian International Conference Centre">
+                <div class="featured-description">
+                    <h2>Featured venue</h2>
+                    <h3>Dalian International Conference Centre</h3>
+                    <a href="#" class="detail-link">Details</a>
+                </div>
             </div>
             <ul class="featured-navigation display-none">
                 <li><a href="#" data-featured-image="uploaded/dalian-large-2.jpg"><img src="uploaded/dalian-small-2.jpg" width="145" height="69" /></a></li>
                 <li><a href="#" data-featured-image="uploaded/dalian-large-3.jpg"><img src="uploaded/dalian-small-3.jpg" width="145" height="69" /></a></li>
                 <li><a href="#" data-featured-image="uploaded/dalian-large-4.jpg" class="active"><img src="uploaded/dalian-small-4.jpg" width="145" height="69" /></a></li>
             </ul>
+            <form id="search" name="search" action="#" method="post" class="search" autocomplete="off">
+                <div class="row">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" value="" id="location" placeholder="Location">
+                </div>
+                <div class="row">
+                    <label for="capacity">Capacity (optional)</label>
+                    <input type="text" name="capacity" value="" id="capacity" placeholder="Capacity (optional)">
+                </div>
+                <div class="row submit">
+                    <button>
+                        Venue<br />Search
+                    </button>
+                </div>
+                <p class="advanced-link"><a href="#">Advanced Search</a></p>
+            </form>
         </div>
     </div>
     <div class="body">
