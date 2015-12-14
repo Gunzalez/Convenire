@@ -9,6 +9,24 @@
         isDesktop : false
     };
 
+    convenire.utils = {
+        preload: function preloadImages(images, callback) {
+            var count = images.length;
+            if(count === 0) {
+                callback();
+            }
+            var loaded = 0;
+            $(images).each(function() {
+                $('<img>').attr('src', this).load(function() {
+                    loaded++;
+                    if (loaded === count) {
+                        callback();
+                    }
+                });
+            });
+        }
+    };
+
     convenire.environment = {
         mobileCheck : function() {
             var check = false;
@@ -34,281 +52,34 @@
                 self.environment.isDesktop = true;
                 $('html').addClass('desktop');
             }
-
-            // sets up all back buttons
-            $('.back-button').on('click', function(evt) {
-                evt.preventDefault();
-                if($(this).attr('href') == '#'){
-                    history.back(1);
-                } else {
-                    location.assign($(this).attr('href'));
-                }
-            });
-
-            // submitting forms with buttons
-            var $allForms = $('.form');
-            $allForms.each(function(){
-                var $thisForm = $(this);
-                $('button.button', $thisForm).on('click', function(){
-                    $thisForm.trigger('submit');
-                });
-            });
-        }
-    };
-
-    convenire.orders = {
-        $html: $('.orders-list'),
-
-        init: function(){
-            var self = this,
-                $orderRows = $('tr', self.$html);
-
-            // order list to detail
-            $orderRows.each(function(i, obj){
-                $(obj).on('click', function(){
-                    var orderId = $(this).data('order-id');
-                    if(orderId !== undefined){
-                        location.assign('ringleaders-edit-order.php?teamId='+orderId);
-                    }
-                });
-            });
-
-            // simple cosmetics
-            $('tr:odd', self.$html).addClass('odd');
-        }
-    };
-
-    convenire.garmentSelection = {
-        $html: $('.garment-selection'),
-        $garmentDisplay: $('#garment-display', this.$html),
-        $textPositionDisplay: $('#garment-overlay', this.$html),
-        $form: $('.form', this.$html),
-        upLoadedImagesPath: "uploaded/",
-
-        init: function() {
-            var self = this,
-                $genderSwitcher = $('.gender-switch', self.$html),
-                $genderSwitches = $('a', $genderSwitcher),
-                $colourSwitcher = $('.colour-switch', self.$html),
-                $colourSwitches = $('input', $colourSwitcher),
-                $fontSwitcher = $('.font-switch', self.$html),
-                $fontSwitches = $('input', $fontSwitcher),
-                $positionSwitcher = $('.position-switch', self.$html),
-                $positionSwitches = $('input', $positionSwitcher),
-                $viewSwitcher = $('.view-switch', self.$html),
-                $viewSwitches = $('a', $viewSwitcher);
-
-
-            // swaps garment gender
-            if($genderSwitcher.length > 0){
-                $genderSwitches.on('click', function (evt){
-                    evt.preventDefault();
-                    if (!$(this).hasClass('selected')){
-                        $genderSwitches.removeClass('selected');
-                        $(this).addClass('selected');
-
-                        var gender = $(this).data('gender'),
-                            genderImage = $(self.$garmentDisplay).attr("data-gender-" + gender);
-
-                        self.$garmentDisplay.css('background', 'url(' + self.upLoadedImagesPath + genderImage + ') 0 0 no-repeat');
-                        $('#gender', self.$form).val(gender); // update value in form
-                    }
-                });
-            }
-
-            // sets the image in the display, based on value set in form
-            if(self.$garmentDisplay.hasClass('set-image')){
-                var initialGender = $('#gender', self.$form).val(), // comes from PHP
-                    genderImage = $(self.$garmentDisplay).attr("data-gender-" + initialGender);
-                self.$garmentDisplay.css('background', 'url(' + self.upLoadedImagesPath + genderImage + ') 0 0 no-repeat');
-            }
-
-
-            // switches overlay png, you can edit the PNG of course to suit the garment
-            if($positionSwitcher.length > 0){
-                $positionSwitches.on('change', function(){
-                    var leftOrRight = $(this).val(),
-                        positionedImage = $(self.$textPositionDisplay).attr("data-image-" + leftOrRight);
-
-                    self.$textPositionDisplay.css('background', 'url(' + self.upLoadedImagesPath + positionedImage + ') 0 0 no-repeat');
-                });
-
-                if(self.$textPositionDisplay != undefined){
-                    var defaultLeftOrRight = $('input[name=position]:checked', self.$form).val(),
-                        positionedImage = $(self.$textPositionDisplay).attr("data-image-" + defaultLeftOrRight);
-                    self.$textPositionDisplay.css('background', 'url(' + self.upLoadedImagesPath + positionedImage + ') 0 0 no-repeat');
-                }
-            }
-
-            // swapping back and front views, on Confirm and Thank You pages
-            if($viewSwitcher.length > 0){
-                $viewSwitches.on('click', function(evt){
-                    evt.preventDefault();
-                    if(!$(this).hasClass('selected')){
-                        $viewSwitches.removeClass('selected');
-                        $(this).addClass('selected');
-
-                        var view = $(this).data('view'),
-                            genderImage = $(self.$garmentDisplay).attr("data-garment-"+view);
-
-                        self.$garmentDisplay.removeClass('back')
-                            .removeClass('front')
-                            .addClass(view)
-                            .css('background','url(' + self.upLoadedImagesPath + genderImage + ') 0 0 no-repeat');
-                    }
-                });
-
-                // set initial image
-                var garmentImage = $(self.$garmentDisplay).attr("data-garment-front");
-                self.$garmentDisplay.css('background','url(' + self.upLoadedImagesPath + garmentImage + ') 0 0 no-repeat');
-            }
-
-            // switches the garment colours, works with any number of colours
-            if ($colourSwitcher.length > 0) {
-                $colourSwitches.on('change', function(){
-                    var varColourRef = $(this).val(),
-                        currentMensImage = $(self.$garmentDisplay).attr('data-gender-mens'),
-                        currentWomensImage = $(self.$garmentDisplay).attr('data-gender-womens'),
-                        newMensImage = currentMensImage.split('.')[0].slice(0,-1) + varColourRef.replace('colour','') + '.' + currentMensImage.split('.')[1],
-                        newWomensImage = currentWomensImage.split('.')[0].slice(0,-1) + varColourRef.replace('colour','') + '.' + currentWomensImage.split('.')[1];
-
-                    $(self.$garmentDisplay).attr('data-gender-mens', newMensImage);
-                    $(self.$garmentDisplay).attr('data-gender-womens', newWomensImage);
-
-                    if(self.$garmentDisplay.hasClass('set-image')){
-                        var initialGender = $('#gender', self.$form).val(), // comes from PHP
-                            genderImage = $(self.$garmentDisplay).attr("data-gender-" + initialGender);
-                        self.$garmentDisplay.css('background', 'url(' + self.upLoadedImagesPath + genderImage + ') 0 0 no-repeat');
-                    }
-
-                    $(this).siblings().find('span').removeClass("selected");
-                    $("[for='"+ varColourRef+"']", self.$form).find('.colour').addClass('selected');
-                });
-            }
-
-            // switches the font colours
-            if ($fontSwitcher.length > 0) {
-                $fontSwitches.on('change', function(){
-                    var varColourRef = $(this).val();
-
-                    $(this).siblings().find('span').removeClass("selected");
-                    $("[for='"+ varColourRef+"']", self.$form).find('.colour').addClass('selected');
-                });
-            }
-        }
-    };
-
-    // switching between edit mode and read-only, on Ringleader edit page
-    convenire.editables = {
-        init: function(){
-            var $editableController = $('#editable'),
-                $nonEditableController = $('#nonEditable'),
-                $readOnly = $('.read-only-mode'),
-                $editable = $('.edit-mode');
-
-            // hides read-only, shows editable
-            $editableController.on('click',function(evt){
-                evt.preventDefault();
-                $readOnly.addClass('display-none');
-                $editable.removeClass('display-none');
-            });
-
-            // hides editable, show read-only
-            $nonEditableController.on('click',function(evt){
-                evt.preventDefault();
-                $readOnly.removeClass('display-none');
-                $editable.addClass('display-none');
-            });
         }
     };
 
     convenire.carousel = {
-        $html: $('.carousel'),
-        isBusy: true,
-
-        // big pink circle in carousel
-        priceTag:{
-            $html:$('#price-tag'),
-            baseUrl: 'ringleaders-choose-garment.php?garmentId=',
-
-            init:function(){
-                if(convenire.carousel.isBusy){
-                    return false
-                } else {
-                    location.assign(this.$html.attr('href'));
-                }
-            },
-
-            hide: function(){
-                this.$html.css('opacity','0');
-            },
-
-            show: function(){
-                this.$html.css('opacity','1');
-            },
-
-            update: function(garmentPrice, garmentTitle, garmentGuid){
-                $(this.$html).attr('href', this.baseUrl + garmentGuid);
-                $('[data-role="title"]',this.$html).html(garmentTitle);
-                $('[data-role="price"]',this.$html).html('&pound'+garmentPrice);
-            }
-        },
+        $stage: $('.featured-large').find('img')[0],
+        $nav: $('.featured-navigation'),
 
         init: function(){
-            var self = this,
-                $stage = $('.stage', self.$html);
+            var self = this;
 
-            if(self.$html.length > 0){
+            // sets up clicking
+            self.$nav.on('click', 'a', function(evt){
+                evt.preventDefault();
+                if(!$(this).hasClass('active')){
+                    $(self.$stage).attr('src', $(this).attr('data-featured-image'));
+                    $('a', self.$nav).removeAttr('class');
+                    $(this).addClass('active')
+                }
+            });
 
-                // carousel initiation
-                $stage.slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 7000,
-                    arrows: true,
-                    dots: true,
-                    responsive: [
-                        {
-                            breakpoint: 480,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-                    ]
-                });
-
-                // set initial state
-                $('.slick-active', self.html).trigger('click');
-
-                $stage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                    self.priceTag.hide();
-                    $('.active-garment', $stage).removeClass('active-garment');
-                    self.isBusy = true;
-                });
-
-                $stage.on('afterChange', function(event, slick, currentSlide, nextSlide){
-                    var $possibleSlides = $('div.slick-active',self.$html),
-                        $activeSlide;
-                        if($possibleSlides.length == 3){
-                            $activeSlide = $possibleSlides.eq(1);
-                        } else if($possibleSlides.length == 1){
-                            $activeSlide = $possibleSlides.eq(0);
-                        }
-
-                    var price = $activeSlide.attr("data-garment-price"),
-                        title = $activeSlide.attr("data-garment-title"),
-                        guid = $activeSlide.attr("data-garment-guid");
-
-                    $activeSlide.addClass('active-garment');
-                    self.priceTag.update(price, title, guid);
-                    self.priceTag.show();
-                    self.isBusy = false;
-                });
-
-                self.priceTag.init();
-            }
+            // nav is initially hidden, shown after preload
+            var imagesToPreload = [];
+            $('a', self.$nav).each(function(i, obj){
+                imagesToPreload.push($(obj).attr('data-featured-image'))
+            });
+            convenire.utils.preload(imagesToPreload, function(){
+                self.$nav.removeClass('display-none');
+            });
         }
     };
 
@@ -316,9 +87,6 @@
 
         // all init
         convenire.environment.init();
-        convenire.garmentSelection.init();
-        convenire.orders.init();
-        convenire.editables.init();
         convenire.carousel.init();
 
         // resize triggers
@@ -344,7 +112,7 @@
 
     // main init
 	$(document).ready(function(){
-		//convenire.init();
+		convenire.init();
 	});
 
 }(jQuery, window));

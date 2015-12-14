@@ -15,18 +15,26 @@ body {
   unicode-range: U+0020-2666;
 }
 
+.display-none {
+  display: none;
+}
+
 .heading,
 .body,
 .hero,
 .footer {
   width: 1100px;
   margin: 0 auto;
-  height: 200px;
+  position: relative;
+}
+
+.strip {
+  background-color: #f2f2f2;
 }
 
 .heading {
   height: 127px;
-  background: url("../images/bg-heading.jpg") 0 0 no-repeat;
+  background: url("../images/bg-heading.png") 0 0 no-repeat;
   position: relative;
 }
 .heading h1 {
@@ -49,7 +57,7 @@ body {
   clear: both;
   display: block;
   top: 0;
-  right: 120px;
+  right: 30px;
 }
 .heading .login-link {
   float: left;
@@ -79,28 +87,68 @@ body {
   line-height: 100%;
 }
 .heading .top-navigation {
-  float: left;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: 'GillSans-Regular';
-  font-size: 2.2em;
+  float: left;
+  font-family: "GillSans-Regular";
+  font-size: 2.4em;
   position: absolute;
-  top: 70px;
-  right: 80px;
+  top: 65px;
+  right: 30px;
 }
 .heading .top-navigation li {
   float: left;
-  padding-right: 40px;
+  padding-left: 50px;
 }
 .heading .top-navigation li a {
   text-decoration: none;
   color: #000000;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
 }
 .heading .top-navigation li a:hover {
   color: #666666;
 }
 
-.strip {
-  background-color: #f2f2f2;
+.hero .green-bar {
+  background: url("../images/bg-green-bar.png") top right no-repeat;
+  width: 100%;
+  height: 34px;
+}
+.hero .green-bar p {
+  padding: 0 30px;
+  margin: 0;
+  text-align: right;
+  color: #ffffff;
+  font-style: italic;
+  line-height: 34px;
+  font-family: "GillSans-Regular";
+  font-size: 1.2em;
+}
+.hero .featured-navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+}
+.hero .featured-navigation li {
+  float: left;
+  padding-left: 15px;
+}
+.hero .featured-navigation a {
+  display: block;
+  border: 1px solid #ffffff;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.hero .featured-navigation .active {
+  border: 1px solid #999999;
 }
