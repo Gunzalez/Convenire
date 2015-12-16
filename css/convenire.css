@@ -15,6 +15,16 @@ body {
   unicode-range: U+0020-2666;
 }
 
+@font-face {
+  font-family: 'GillSans-Light';
+  src: url("fonts/GillSans-Light_gdi.eot");
+  src: url("fonts/GillSans-Light_gdi.eot?#iefix") format("embedded-opentype"), url("fonts/GillSans-Light_gdi.woff") format("woff"), url("fonts/GillSans-Light_gdi.ttf") format("truetype"), url("fonts/GillSans-Light_gdi.svg#GillSans-Light") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+
 .display-none {
   display: none;
 }
@@ -242,4 +252,74 @@ body {
 .hero .search .advanced-link a:hover {
   color: #666666;
   text-decoration: none;
+}
+
+.body {
+  padding: 31px;
+  box-sizing: border-box;
+  content: "";
+  clear: both;
+  display: block;
+}
+.body .pod {
+  float: left;
+  width: 31.34%;
+  min-height: 145px;
+  margin-right: 31px;
+}
+.body .pod:nth-last-child(1) {
+  margin-right: 0;
+}
+.body .pod h3 {
+  margin: 0;
+  padding: 0;
+  height: 54px;
+  width: 100%;
+  font-size: 1.4em;
+  font-family: "GillSans-Light";
+  background-image: url("../images/bg-pod-header.png");
+  background-position: -52px 50%;
+  background-repeat: no-repeat;
+}
+.body .pod a {
+  display: block;
+  line-height: 54px;
+  padding: 0 40px;
+  color: #ffffff;
+  background: url("../images/bg-arrow-fixed.png") center right no-repeat;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.body .pod .copy {
+  background-size: cover;
+  background-position: 0 0;
+  padding: 20px 60px 20px 30px;
+  min-height: 100px;
+}
+.body .pod.green h3 {
+  background-color: #00cc66;
+}
+.body .pod.green .copy {
+  background-image: url("../images/bg-pod-green.png");
+}
+.body .pod.red h3 {
+  background-color: #e8555c;
+}
+.body .pod.red .copy {
+  background-image: url("../images/bg-pod-red.png");
+}
+.body .pod.blue h3 {
+  background-color: #1da8cb;
+}
+.body .pod.blue .copy {
+  background-image: url("../images/bg-pod-blue.jpg");
+}
+.body .pod h4, .body .pod p {
+  margin: 0;
+  padding: 0 0 5px 0;
+  line-height: 105%;
+  color: #ffffff;
+}
+.body .pod h4.shout, .body .pod p.shout {
+  font-size: 1.3em;
 }
