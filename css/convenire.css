@@ -34,6 +34,11 @@ body {
   display: block;
 }
 
+.cright {
+  clear: right;
+  display: block;
+}
+
 a {
   color: #00cc66;
   text-decoration: none;
@@ -54,6 +59,14 @@ a:hover {
 
 .strip {
   background-color: #f2f2f2;
+}
+
+.foot {
+  background-color: #373838;
+  -moz-box-shadow: inset 0 8px 8px -8px black;
+  -webkit-box-shadow: inset 0 8px 8px -8px black;
+  box-shadow: inset 0 8px 8px -8px black;
+  padding-bottom: 30px;
 }
 
 .heading {
@@ -390,4 +403,33 @@ a:hover {
 }
 .body .news-item .news-detail {
   padding: 3px 0;
+}
+
+.footer {
+  width: 1040px;
+  padding: 20px 0 15px 0;
+  background: url("../images/bg-footer.png") center bottom no-repeat;
+}
+.footer .footer-navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+  font-family: "GillSans-Light";
+  font-size: 1.3em;
+}
+.footer .footer-navigation li {
+  float: left;
+  padding-left: 20px;
+}
+.footer .footer-navigation a {
+  color: #cccccc;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.footer .footer-navigation a:hover {
+  color: #00cc66;
+  text-decoration: none;
 }
