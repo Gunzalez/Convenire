@@ -94,7 +94,7 @@ a:hover {
   clear: both;
   display: block;
   top: 0;
-  right: 30px;
+  right: 24px;
 }
 .heading .login-link {
   float: left;
@@ -131,12 +131,13 @@ a:hover {
   font-family: "GillSans-Regular";
   font-size: 2.3em;
   position: absolute;
-  top: 67px;
+  bottom: 12px;
   right: 30px;
 }
 .heading .top-navigation li {
   float: left;
-  padding-left: 55px;
+  padding: 0 0 0 55px;
+  margin: 0;
 }
 .heading .top-navigation li a {
   text-decoration: none;
@@ -148,6 +149,15 @@ a:hover {
 }
 .heading .top-navigation li a:hover {
   color: #00cc66;
+}
+.heading .mobile-navigation-button {
+  position: absolute;
+  bottom: 12px;
+  right: 30px;
+  font-size: 2.5em;
+  display: none;
+  color: #000000;
+  outline: none;
 }
 
 .hero .green-bar {
@@ -381,6 +391,9 @@ a:hover {
   margin-bottom: 20px;
   font-size: 0.9em;
 }
+.body .news-item .news-date {
+  color: #000000;
+}
 .body .news-item .news-title {
   margin-left: 5px;
   font-weight: bold;
@@ -499,6 +512,12 @@ a:hover {
   .heading {
     background: #ffffff;
   }
+  .heading .top-navigation {
+    display: none;
+  }
+  .heading .mobile-navigation-button {
+    display: block;
+  }
 
   .hero .green-bar {
     background: #00cc66;
@@ -529,6 +548,7 @@ a:hover {
 
   .body .pods .col {
     width: 100%;
+    border-bottom: 1px solid #ffffff;
   }
   .body .main-copy > div {
     width: 100%;
