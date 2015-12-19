@@ -78,7 +78,7 @@ a:hover {
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 30px;
+  bottom: 24px;
   left: 30px;
 }
 .heading .logo a {
@@ -218,6 +218,7 @@ a:hover {
   text-align: right;
   line-height: 130%;
   padding: 0 20px 0 190px;
+  font-family: "GillSans-Light";
 }
 .hero .featured-description h3 {
   font-size: 1.4em;
@@ -291,12 +292,11 @@ a:hover {
 }
 
 .body {
-  padding: 30px;
+  padding: 30px 15px;
   box-sizing: border-box;
 }
 .body .pods {
   padding-bottom: 30px;
-  margin: 0 -15px;
 }
 .body .col {
   float: left;
@@ -374,11 +374,9 @@ a:hover {
   margin: 0;
   padding: 0 0 10px 0;
 }
-.body .left-copy {
-  padding-right: 30px;
-}
+.body .left-copy,
 .body .right-copy {
-  padding-left: 30px;
+  padding: 0 15px;
 }
 .body .news-list {
   margin: 0;
@@ -390,6 +388,9 @@ a:hover {
   min-height: 81px;
   margin-bottom: 20px;
   font-size: 0.9em;
+}
+.body .news-item:nth-last-child(1) {
+  margin-bottom: 0;
 }
 .body .news-item .news-date {
   color: #000000;
@@ -473,7 +474,6 @@ a:hover {
     display: none;
   }
   .hero .featured-description {
-    height: 88px;
     width: 100%;
     position: static;
     padding-right: 120px;
@@ -512,6 +512,11 @@ a:hover {
   .heading {
     background: #ffffff;
   }
+  .heading .logo a {
+    width: 160px;
+    height: 61px;
+    background-size: cover;
+  }
   .heading .top-navigation {
     display: none;
   }
@@ -519,31 +524,31 @@ a:hover {
     display: block;
   }
 
-  .hero .green-bar {
-    background: #00cc66;
-  }
+  .hero .green-bar,
   .hero .search {
     display: none;
   }
-  .hero .featured-description {
-    height: 88px;
-    width: 100%;
-    position: static;
-    padding-right: 120px;
-    background: none;
-    padding-top: 9px;
-    border-bottom: 1px solid #eaeaea;
+  .hero .featured-navigation {
+    top: 15px;
   }
-  .hero .featured-description h3, .hero .featured-description h2 {
-    text-align: left;
-    line-height: 130%;
-    padding: 0 30px 0 30px;
+  .hero .featured-description {
+    height: auto;
+    min-height: 54px;
+    background: none;
+    padding: 15px 90px 15px 0;
+  }
+  .hero .featured-description h2 {
+    display: none;
+  }
+  .hero .featured-description h3 {
+    line-height: 120%;
+    font-size: 1.2em;
+    color: #000000;
   }
   .hero .featured-description .detail-link {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    top: auto;
+    height: 54px;
+    background: url("../images/bg-arrow-fixed.png") 50% 50% no-repeat #00cc66;
+    width: 52px;
   }
 
   .body .pods .col {
@@ -552,6 +557,19 @@ a:hover {
   }
   .body .main-copy > div {
     width: 100%;
-    padding: 0 !important;
+  }
+
+  .foot .footer-navigation {
+    text-align: center;
+    float: none;
+    font-size: 1.1em;
+  }
+  .foot .footer-navigation li {
+    display: inline;
+    padding: 0 10px;
+    float: none;
+  }
+  .foot .footer-navigation li a {
+    display: inline-block;
   }
 }
