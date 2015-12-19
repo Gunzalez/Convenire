@@ -297,6 +297,7 @@ a:hover {
 }
 .body .pods {
   padding-bottom: 30px;
+  font-family: "GillSans-Light";
 }
 .body .col {
   float: left;
@@ -454,6 +455,12 @@ a:hover {
   .heading {
     background: #ffffff;
   }
+  .heading .top-navigation {
+    display: none;
+  }
+  .heading .mobile-navigation-button {
+    display: block;
+  }
 
   .hero .featured-navigation a {
     border-width: 15px;
@@ -517,12 +524,6 @@ a:hover {
     height: 61px;
     background-size: cover;
   }
-  .heading .top-navigation {
-    display: none;
-  }
-  .heading .mobile-navigation-button {
-    display: block;
-  }
 
   .hero .green-bar,
   .hero .search {
@@ -572,4 +573,15 @@ a:hover {
   .foot .footer-navigation li a {
     display: inline-block;
   }
+}
+#menu a {
+  font-family: "GillSans-Light" !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#menu .mm-search input {
+  border-radius: 0;
+  font-family: "GillSans-Light" !important;
+  font-size: 1.2em;
+  padding: 10px;
 }

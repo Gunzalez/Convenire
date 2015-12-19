@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -13,6 +12,9 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/convenire.css" rel="stylesheet">
 
+    <!-- Include jQuery.mmenu .css files -->
+    <link type="text/css" href="js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,6 +23,7 @@
     <![endif]-->
 </head>
 <body class="homepage">
+<div>
     <div class="heading">
         <h1 class="logo"><a href="#">Convenire</a></h1>
         <div class="login-form">
@@ -35,7 +38,7 @@
             <li><a href="#">Review</a></li>
             <li><a href="#">Add</a></li>
         </ul>
-        <a href="#" class="mobile-navigation-button"><i class="fa fa-bars"></i></a>
+        <a href="#menu" class="mobile-navigation-button"><i class="fa fa-bars"></i></a>
     </div>
     <div class="strip">
         <div class="hero">
@@ -143,7 +146,16 @@
             <div class="cright"></div>
         </div>
     </div>
-    <script src="js/vendors/jquery-1.9.1.min.js"></script>
-    <script src="js/convenire.js"></script>
+</div>
+<nav id="menu">
+    <ul>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">Review</a></li>
+        <li><a href="#">Add</a></li>
+    </ul>
+</nav>
+<script src="js/vendors/jquery-1.9.1.min.js"></script>
+<script src="js/convenire.js"></script>
+<script type="text/javascript" src="js/mmenu/jquery.mmenu.min.all.js"></script>
 </body>
 </html>

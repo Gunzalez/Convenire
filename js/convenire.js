@@ -83,11 +83,35 @@
         }
     };
 
+    convenire.mobileNav = {
+
+        init: function(){
+            $("#menu").mmenu({
+                "extensions": [
+                    "pageshadow",
+                    "theme-dark",
+                    "pagedim",
+                    "effect-menu-slide",
+                    "effect-listitems-slide"
+                ],
+                "offCanvas": {
+                    "position": "right"
+                },
+                "searchfield": {
+                    "placeholder": "Location",
+                    "add": true
+                }
+                //,"slidingSubmenus": false
+            });
+        }
+    }
+
 	convenire.init = function(){
 
         // all init
         convenire.environment.init();
         convenire.carousel.init();
+        convenire.mobileNav.init();
 
         // resize triggers
 		$(window).on('resize',function(){
