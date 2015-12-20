@@ -60,7 +60,7 @@
         $nav: $('.featured-navigation'),
         auto: {
             start: true,
-            delay: 7, // seconds
+            delay: 10, // seconds
             timer: undefined
         },
 
@@ -117,9 +117,10 @@
                         self.next();
                     }, self.auto.delay *1000);
 
-                    // stops carousel when buttons are clicked
+                    // stops carousel once buttons have been clicked
                     $('a', self.$nav).on('mousedown', function(){
                         clearInterval(self.auto.timer);
+                        $('a', self.$nav).unbind('mousedown');
                     })
                 }
             });
@@ -143,7 +144,7 @@
                 //,"slidingSubmenus": false
             });
         }
-    }
+    };
 
 	convenire.init = function(){
 
