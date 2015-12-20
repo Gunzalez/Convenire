@@ -58,6 +58,37 @@
     convenire.carousel = {
         $stage: $('.featured-large').find('img')[0],
         $nav: $('.featured-navigation'),
+        auto: {
+            start: true,
+            delay: 7, // seconds
+            timer: undefined
+        },
+
+        next: function(){
+            var cnt = $('a', this.$nav).length,
+                activeIndex = $('a', this.$nav).index($('.active'));
+
+            if(activeIndex == (cnt-1)){
+                activeIndex = 0;
+            } else {
+                activeIndex++;
+            }
+
+            $('a', this.$nav).eq(activeIndex).trigger('click');
+        },
+
+        prev: function(){
+            var cnt = $('a', this.$nav).length,
+                activeIndex = $('a', this.$nav).index($('.active'));
+
+            if(activeIndex == 0){
+                activeIndex = (cnt-1);
+            } else {
+                activeIndex--;
+            }
+
+            $('a', this.$nav).eq(activeIndex).trigger('click');
+        },
 
         init: function(){
             var self = this;
@@ -68,17 +99,29 @@
                 if(!$(this).hasClass('active')){
                     $(self.$stage).attr('src', $(this).attr('data-featured-image'));
                     $('a', self.$nav).removeAttr('class');
-                    $(this).addClass('active')
+                    $(this).addClass('active');
                 }
             });
 
-            // nav is initially hidden, shown after preload
+            // nav is initially hidden, shown after large images have preloaded
             var imagesToPreload = [];
             $('a', self.$nav).each(function(i, obj){
                 imagesToPreload.push($(obj).attr('data-featured-image'))
             });
             convenire.utils.preload(imagesToPreload, function(){
                 self.$nav.removeClass('display-none');
+
+                // setting up auto rotate
+                if(self.auto.start){
+                    self.auto.timer = setInterval(function(){
+                        self.next();
+                    }, self.auto.delay *1000);
+
+                    // stops carousel when buttons are clicked
+                    $('a', self.$nav).on('mousedown', function(){
+                        clearInterval(self.auto.timer);
+                    })
+                }
             });
         }
     };
@@ -96,10 +139,6 @@
                 ],
                 "offCanvas": {
                     "position": "right"
-                },
-                "searchfield": {
-                    "placeholder": "Location",
-                    "add": true
                 }
                 //,"slidingSubmenus": false
             });
