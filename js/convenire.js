@@ -60,7 +60,7 @@
         $nav: $('.featured-navigation'),
         auto: {
             start: true,
-            delay: 10, // seconds
+            delay: 6, // seconds
             timer: undefined
         },
 

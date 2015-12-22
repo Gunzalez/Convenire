@@ -253,6 +253,7 @@ a:hover {
 .hero .search .row {
   padding-bottom: 15px;
   padding-left: 40px;
+  margin: 0;
 }
 .hero .search label {
   display: none;
@@ -501,13 +502,14 @@ a:hover {
 }
 .body .step-form {
   clear: both;
-  padding: 20px 15px 30px 15px;
+  padding: 20px 0;
 }
 .body .step-form .row {
   content: "";
   clear: both;
   display: block;
   padding-bottom: 15px;
+  margin: 0;
 }
 .body .step-form .row:nth-last-child(1) {
   padding-bottom: 0;
@@ -529,6 +531,18 @@ a:hover {
   outline: none;
   margin: 0;
   border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.body .step-form select {
+  width: 50%;
+  float: right;
+  padding: 2px 30px 2px 4px;
+  border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+  background: url("../images/bg-select-box.png") center right no-repeat;
 }
 .body .step-form textarea {
   padding: 2px 4px;
@@ -536,6 +550,8 @@ a:hover {
   outline: none;
   resize: none;
   border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 .body .step-form .like-input {
   width: 50%;
@@ -763,11 +779,13 @@ a:hover {
     float: none;
     margin-top: 0;
     padding-bottom: 15px;
+    width: 100%;
   }
   .body .page-title .progress-label,
   .body .page-title .review-bar {
     float: none;
     padding: 0;
+    width: 100%;
   }
   .body .step {
     border-bottom: none;
@@ -801,16 +819,7 @@ a:hover {
   }
   .body .step-form {
     clear: both;
-    padding: 10px 15px;
-  }
-  .body .step-form .row {
-    content: "";
-    clear: both;
-    display: block;
-    padding-bottom: 5px;
-  }
-  .body .step-form .row:nth-last-child(1) {
-    padding-bottom: 0;
+    padding: 10px 0;
   }
   .body .step-form label {
     width: 100%;
@@ -822,8 +831,10 @@ a:hover {
     width: 100%;
     float: none;
   }
+  .body .step-form select,
   .body .step-form textarea {
     width: 100%;
+    float: none;
   }
   .body .step-form .like-input {
     width: 100%;
