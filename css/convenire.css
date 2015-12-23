@@ -469,6 +469,21 @@ a:hover {
   height: 8px;
   background: #00cc66;
 }
+.body .news-item-title {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.body .news-item-title h2 {
+  padding-bottom: 0;
+}
+.body .news-item-title .news-item-date {
+  color: #999999;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: "GillSans-Regular";
+  display: block;
+}
 .body .step {
   border-bottom: 1px solid #cccccc;
   margin-bottom: 10px;
@@ -830,6 +845,7 @@ a:hover {
   .body .step-form input[type="text"] {
     width: 100%;
     float: none;
+    padding: 4px 6px;
   }
   .body .step-form select,
   .body .step-form textarea {
