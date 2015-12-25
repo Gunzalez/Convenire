@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Convenire</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/convenire.css" rel="stylesheet">
+
+    <!-- Include jQuery.mmenu .css files -->
+    <link type="text/css" href="js/mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div>
+    <div class="heading">
+        <h1 class="logo"><a href="index.html">Convenire</a></h1>
+        <div class="login-form">
+            <a href="#" class="login-link">Secure log in</a>
+            <ul class="social-navigation">
+                <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            </ul>
+        </div>
+        <ul class="top-navigation">
+            <li><a href="#">Locate</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="#">Add</a></li>
+        </ul>
+        <a href="#menu" class="mobile-navigation-button"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="strip">
+        <div class="hero">
+            <div class="green-bar">
+                <p>International Conference Venue Review Service</p>
+            </div>
+            <div class="page-image google-map">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d75993.07573252273!2d-2.2936314439768397!3d53.47232715174449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1451000799545"
+                            width="1100"
+                            height="247"
+                            frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <form id="search" name="search" action="results.html" method="post" class="search" autocomplete="off">
+                <div class="row">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" value="" id="location" placeholder="Location">
+                </div>
+                <div class="row">
+                    <label for="capacity">Capacity (optional)</label>
+                    <input type="text" name="capacity" value="" id="capacity" placeholder="Capacity (optional)">
+                </div>
+                <div class="row submit">
+                    <button>
+                        Venue<br />Search
+                    </button>
+                </div>
+                <p class="advanced-link"><a href="#">Advanced Search</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="body">
+        <div class="main-copy">
+            <div class="col col-2-of-3">
+
+                <div class="page-title search">
+                    <h2>You searched for:</h2>
+                    <div class="search-meta">
+                        <div class="search-criteria">
+                            <dl>
+                                <dt>Location -</dt>
+                                <dd>Manchester (United Kingdom)</dd>
+                                <dt>Capacity -</dt>
+                                <dd>200 - 400</dd>
+                            </dl>
+                        </div>
+                        <div class="search-order">
+                            <p>Order by</p>
+                            <ul>
+                                <li><a href="#" class="active">Rating</a></li>
+                                <li><a href="#">Capacity</a></li>
+                            </ul>
+                        </div>
+                        <span class="cboth"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col col-1-of-3 col-hide">
+                <div class="highlighted">
+                    <a href="news.html">
+                        <img src="uploaded/highlighted.jpg" alt="" />
+                        <span class="title">The perfect location</span>
+                    </a>
+                </div>
+            </div>
+            <span class="cleft"></span>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="footer">
+            <ul class="footer-navigation">
+                <li><a href="#">venues</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="news.html">news</a></li>
+            </ul>
+            <div class="cright"></div>
+        </div>
+    </div>
+</div>
+<nav id="menu">
+    <ul>
+        <li><a href="#">Locate</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="#">Add</a></li>
+    </ul>
+</nav>
+<script src="js/vendors/jquery-1.9.1.min.js"></script>
+<script src="js/convenire.js"></script>
+<script type="text/javascript" src="js/mmenu/jquery.mmenu.min.all.js"></script>
+</body>
+</html>

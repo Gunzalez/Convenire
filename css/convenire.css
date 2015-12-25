@@ -77,12 +77,13 @@ a:hover {
 
 .google-map {
   position: relative;
+  overflow: hidden;
 }
 .google-map #map {
   position: absolute;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
+  top: 0;
+  -webkit-transform: translateX(-50%);
 }
 
 .heading {
@@ -395,9 +396,10 @@ a:hover {
   float: right;
 }
 .body .main-copy h2 {
-  font-family: "GillSans-Light";
+  font-family: "GillSans-Regular";
   margin: 0;
   padding: 0 0 10px 0;
+  font-size: 1.7em;
 }
 .body .main-copy p {
   margin: 0;
@@ -453,17 +455,17 @@ a:hover {
   border-bottom: 1px solid #cccccc;
   margin-bottom: 10px;
 }
-.body .page-title h2 {
+.body .page-title.review h2 {
   float: left;
   width: 200px;
 }
-.body .page-title .review-progress-bar {
+.body .page-title.review .review-progress-bar {
   float: right;
   font-family: "GillSans-Light";
   width: 330px;
   margin-top: 10px;
 }
-.body .page-title .review-bar {
+.body .page-title.review .review-bar {
   float: right;
   width: 260px;
   height: 5px;
@@ -471,31 +473,79 @@ a:hover {
   margin-top: 10px;
   position: relative;
 }
-.body .page-title .progress-label {
+.body .page-title.review .progress-label {
   float: left;
   width: 60px;
   font-family: "GillSans-Regular";
 }
-.body .page-title .review-progress {
+.body .page-title.review .review-progress {
   position: absolute;
   top: -3px;
   left: 0;
   height: 8px;
   background: #00cc66;
 }
-.body .news-item-title {
-  border-bottom: 1px solid #cccccc;
-  margin-bottom: 10px;
+.body .page-title.news {
   padding-bottom: 5px;
 }
-.body .news-item-title h2 {
+.body .page-title.news h2 {
   padding-bottom: 0;
 }
-.body .news-item-title .news-item-date {
+.body .page-title.news .news-item-date {
   color: #999999;
   font-size: 0.9em;
   font-weight: bold;
   font-family: "GillSans-Regular";
+  display: block;
+}
+.body .page-title.search .search-meta {
+  padding-bottom: 10px;
+}
+.body .page-title.search .search-meta .search-criteria {
+  float: left;
+  width: 70%;
+}
+.body .page-title.search .search-meta .search-criteria dl {
+  float: left;
+  margin: 0;
+}
+.body .page-title.search .search-meta .search-criteria dl dt {
+  clear: left;
+  float: left;
+  width: 80px;
+  padding-bottom: 3px;
+}
+.body .page-title.search .search-meta .search-criteria dl dd {
+  float: left;
+  color: #1da8cb;
+}
+.body .page-title.search .search-meta .search-order {
+  float: right;
+  width: 30%;
+  margin-top: -20px;
+}
+.body .page-title.search .search-meta .search-order p {
+  padding: 0 0 2px 0;
+  margin: 0;
+  text-align: right;
+  font-size: 0.9em;
+}
+.body .page-title.search .search-meta .search-order ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+}
+.body .page-title.search .search-meta .search-order ul li {
+  float: left;
+}
+.body .page-title.search .search-meta .search-order ul li a {
+  padding: 10px 15px;
+  background-color: #00cc66;
+  color: #ffffff;
+  font-family: "GillSans-Regular";
+  text-decoration: none;
+  margin-left: 1px;
   display: block;
 }
 .body .step {
@@ -851,19 +901,19 @@ a:hover {
   .body .main-copy > div {
     width: 100%;
   }
-  .body .page-title h2 {
+  .body .page-title.review h2 {
     float: none;
     width: auto;
     padding-bottom: 5px;
   }
-  .body .page-title .review-progress-bar {
+  .body .page-title.review .review-progress-bar {
     float: none;
     margin-top: 0;
     padding-bottom: 15px;
     width: 100%;
   }
-  .body .page-title .progress-label,
-  .body .page-title .review-bar {
+  .body .page-title.review .progress-label,
+  .body .page-title.review .review-bar {
     float: none;
     padding: 0;
     width: 100%;
