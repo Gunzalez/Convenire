@@ -793,6 +793,7 @@ a:hover {
   display: block;
   color: #1da8cb;
   font-size: 0.9em;
+  clear: right;
   float: right;
   text-decoration: none;
 }
@@ -825,6 +826,40 @@ a:hover {
   line-height: 22px;
   text-decoration: none;
   padding: 2px 2px 2px 9px;
+}
+.body .search-results .results-list li .search-meta .stars-score {
+  background: url("../images/stars-empty.png") 0 0 no-repeat white;
+  width: 130px;
+  height: 26px;
+  float: right;
+  position: relative;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+}
+.body .search-results .results-list li .search-meta .stars-score .score {
+  position: absolute;
+  width: 130px;
+  height: 26px;
+  background: url("../images/stars-full.png") 0 0 no-repeat;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-0 {
+  width: 0;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-1 {
+  width: 26px;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-2 {
+  width: 52px;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-3 {
+  width: 78px;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-4 {
+  width: 104px;
+}
+.body .search-results .results-list li .search-meta .stars-score .score.score-5 {
+  width: 130px;
 }
 
 .footer {
