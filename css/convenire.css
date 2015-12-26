@@ -549,6 +549,12 @@ a:hover {
   margin-left: 1px;
   display: block;
 }
+.body .page-title.search .search-meta .search-order ul li a.active {
+  padding-right: 40px;
+}
+.body .page-title.search .search-meta .search-order ul li a.active.asc {
+  background: url("../images/bg-arrow-up-down-sprite.png") right 14px no-repeat #00cc66;
+}
 .body .step {
   border-bottom: 1px solid #cccccc;
   margin-bottom: 10px;
@@ -689,6 +695,7 @@ a:hover {
 .body .highlighted img {
   width: 100%;
   display: block;
+  border: 1px solid #cccccc;
 }
 .body .highlighted .title {
   background: #ffffff;
@@ -796,6 +803,8 @@ a:hover {
   clear: right;
   float: right;
   text-decoration: none;
+  background: url("../images/bg-reviews-arrow.png") right center no-repeat;
+  padding-right: 12px;
 }
 .body .search-results .results-list li .search-meta .result-criteria {
   clear: right;
@@ -818,6 +827,7 @@ a:hover {
 }
 .body .search-results .results-list li .search-meta .see-more {
   background: url("../images/bg-arrow-step-next.png") center right no-repeat #00cc66;
+  clear: right;
   float: right;
   color: #ffffff;
   display: inline-block;
