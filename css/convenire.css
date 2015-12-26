@@ -444,6 +444,7 @@ a:hover {
   left: 0;
   margin-left: 0;
   display: block;
+  border: 1px solid #cccccc;
 }
 .body .news-item .news-image img {
   display: block;
@@ -463,7 +464,7 @@ a:hover {
   float: right;
   font-family: "GillSans-Light";
   width: 330px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .body .page-title.review .review-bar {
   float: right;
@@ -712,6 +713,7 @@ a:hover {
 }
 .body .news-item-images .news-item-main img {
   width: 100%;
+  border: 1px solid #cccccc;
 }
 .body .news-item-images .news-item-thumbnails {
   float: left;
@@ -745,6 +747,84 @@ a:hover {
   opacity: 1;
   filter: alpha(opacity=100);
   /* For IE8 and earlier */
+}
+.body .search-results .results-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.body .search-results .results-list li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 15px;
+}
+.body .search-results .results-list li .venue-meta {
+  float: left;
+  width: 50%;
+  padding-right: 15px;
+}
+.body .search-results .results-list li .venue-meta .venue-title {
+  color: #1da8cb;
+  font-family: "GillSans-Regular";
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.body .search-results .results-list li .venue-meta .details {
+  position: relative;
+  min-height: 100px;
+}
+.body .search-results .results-list li .venue-meta .details img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #cccccc;
+}
+.body .search-results .results-list li .venue-meta .details .copy {
+  padding-left: 95px;
+  font-size: 0.9em;
+}
+.body .search-results .results-list li .search-meta {
+  float: right;
+  width: 50%;
+  padding-left: 15px;
+}
+.body .search-results .results-list li .search-meta .reviews {
+  display: block;
+  color: #1da8cb;
+  font-size: 0.9em;
+  float: right;
+  text-decoration: none;
+}
+.body .search-results .results-list li .search-meta .result-criteria {
+  clear: right;
+  float: right;
+}
+.body .search-results .results-list li .search-meta .result-criteria dl {
+  float: right;
+  width: 230px;
+  margin-bottom: 10px;
+}
+.body .search-results .results-list li .search-meta .result-criteria dl dt {
+  text-align: right;
+  float: left;
+  width: 180px;
+}
+.body .search-results .results-list li .search-meta .result-criteria dl dd {
+  text-align: right;
+  width: 50px;
+  float: left;
+}
+.body .search-results .results-list li .search-meta .see-more {
+  background: url("../images/bg-arrow-step-next.png") center right no-repeat #00cc66;
+  float: right;
+  color: #ffffff;
+  display: inline-block;
+  font-family: "GillSans-Regular";
+  width: 110px;
+  line-height: 22px;
+  text-decoration: none;
+  padding: 2px 2px 2px 9px;
 }
 
 .footer {
