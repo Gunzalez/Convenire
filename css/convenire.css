@@ -1158,6 +1158,7 @@ a:hover {
     float: left;
   }
   .body .search-results .results-list li .search-meta .result-criteria {
+    clear: left;
     float: left;
   }
   .body .search-results .results-list li .search-meta .result-criteria dl {
@@ -1189,14 +1190,42 @@ a:hover {
     display: inline-block;
   }
 }
-#menu a {
-  font-family: "GillSans-Light" !important;
+#menu a, #menu span {
+  font-family: "GillSans-Regular" !important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-#menu .mm-search input {
+#menu .mm-navbar {
+  text-align: right;
+  padding: 0 20px;
+}
+#menu .mobile-search-form {
+  padding: 20px;
+}
+#menu .mobile-search-form input {
   border-radius: 0;
-  font-family: "GillSans-Light" !important;
-  font-size: 1.2em;
-  padding: 10px;
+  border: none;
+  font-family: "GillSans-Regular" !important;
+  font-size: 1.1em;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+  color: #000000;
+}
+#menu .mobile-search-form button {
+  width: 100%;
+  background-color: #00cc66;
+  padding: 4px 6px;
+  text-transform: uppercase;
+  border: none;
+  font-family: "GillSans-Regular" !important;
+  margin-bottom: 10px;
+  outline: none;
+}
+#menu .mobile-search-form .advanced-search-button {
+  font-family: "GillSans-Regular" !important;
+  font-size: 0.85em;
+  display: block;
+  text-align: right;
 }
