@@ -759,11 +759,17 @@ a:hover {
   margin: 0;
   padding: 0;
   list-style: none;
+  padding-top: 5px;
 }
 .body .search-results .results-list li {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+.body .search-results .results-list li:nth-last-child(1) {
+  padding-bottom: 0;
+  border-bottom: 0;
+  margin-bottom: 0;
 }
 .body .search-results .results-list li .venue-meta {
   float: left;
@@ -779,7 +785,7 @@ a:hover {
 }
 .body .search-results .results-list li .venue-meta .details {
   position: relative;
-  min-height: 100px;
+  min-height: 95px;
 }
 .body .search-results .results-list li .venue-meta .details img {
   position: absolute;
@@ -1043,6 +1049,29 @@ a:hover {
     padding: 0;
     width: 100%;
   }
+  .body .page-title.search .search-meta .search-criteria {
+    float: none;
+    width: 100%;
+  }
+  .body .page-title.search .search-meta .search-criteria dl {
+    float: none;
+    margin: 0;
+  }
+  .body .page-title.search .search-meta .search-criteria dl dt {
+    float: none;
+    width: auto;
+    padding-bottom: 3px;
+  }
+  .body .page-title.search .search-meta .search-criteria dl dd {
+    float: none;
+    color: #1da8cb;
+  }
+  .body .page-title.search .search-meta .search-order {
+    clear: left;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+  }
   .body .step {
     border-bottom: none;
     margin-bottom: 0;
@@ -1113,6 +1142,37 @@ a:hover {
     width: 100%;
     box-sizing: border-box;
     padding-left: 0;
+  }
+  .body .search-results .results-list li .venue-meta {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+  .body .search-results .results-list li .search-meta {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+  }
+  .body .search-results .results-list li .search-meta .reviews {
+    clear: left;
+    float: left;
+  }
+  .body .search-results .results-list li .search-meta .result-criteria {
+    float: left;
+  }
+  .body .search-results .results-list li .search-meta .result-criteria dl {
+    float: left;
+  }
+  .body .search-results .results-list li .search-meta .result-criteria dl dt {
+    text-align: left;
+  }
+  .body .search-results .results-list li .search-meta .see-more {
+    clear: left;
+    float: left;
+  }
+  .body .search-results .results-list li .search-meta .stars-score {
+    float: none;
+    margin-bottom: 10px;
   }
 
   .foot .footer-navigation {
