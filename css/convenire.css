@@ -1104,7 +1104,7 @@ a:hover {
   }
   .body .step-form {
     clear: both;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
   }
   .body .step-form label {
     width: 100%;
@@ -1194,10 +1194,16 @@ a:hover {
   font-family: "GillSans-Regular" !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 1.1em;
+  color: #ffffff;
 }
 #menu .mm-navbar {
   text-align: right;
   padding: 0 20px;
+}
+#menu .mm-navbar a {
+  font-family: "GillSans-Light" !important;
+  color: #cccccc;
 }
 #menu .mobile-search-form {
   padding: 20px;
@@ -1206,8 +1212,8 @@ a:hover {
   border-radius: 0;
   border: none;
   font-family: "GillSans-Regular" !important;
-  font-size: 1.1em;
-  padding: 4px 6px;
+  font-size: 1.3em;
+  padding: 6px 8px;
   margin-bottom: 10px;
   width: 100%;
   outline: none;
@@ -1216,7 +1222,7 @@ a:hover {
 #menu .mobile-search-form button {
   width: 100%;
   background-color: #00cc66;
-  padding: 4px 6px;
+  padding: 6px 8px;
   text-transform: uppercase;
   border: none;
   font-family: "GillSans-Regular" !important;
@@ -1228,4 +1234,5 @@ a:hover {
   font-size: 0.85em;
   display: block;
   text-align: right;
+  color: #00cc66;
 }
