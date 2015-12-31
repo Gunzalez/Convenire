@@ -555,6 +555,21 @@ a:hover {
 .body .page-title.search .search-meta .search-order ul li a.active.asc {
   background: url("../images/bg-arrow-up-down-sprite.png") right 14px no-repeat #00cc66;
 }
+.body .page-title.venue {
+  position: relative;
+  min-height: 60px;
+  border-bottom: none;
+}
+.body .page-title.venue h2 {
+  padding-bottom: 5px;
+}
+.body .page-title.venue .ratings-meta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  min-height: 55px;
+}
 .body .step {
   border-bottom: 1px solid #cccccc;
   margin-bottom: 10px;
@@ -743,11 +758,12 @@ a:hover {
 }
 .body .news-item-images .news-item-thumbnails ul li a {
   display: block;
+  border: 1px solid #cccccc;
 }
 .body .news-item-images .news-item-thumbnails ul li a img {
   width: 100%;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
   /* For IE8 and earlier */
 }
 .body .news-item-images .news-item-thumbnails ul li a.active img {
@@ -802,34 +818,9 @@ a:hover {
   width: 50%;
   padding-left: 15px;
 }
-.body .search-results .results-list li .search-meta .reviews {
-  display: block;
-  color: #1da8cb;
-  font-size: 0.9em;
+.body .search-results .results-list li .search-meta .venue-capacity {
   clear: right;
   float: right;
-  text-decoration: none;
-  background: url("../images/bg-reviews-arrow.png") right center no-repeat;
-  padding-right: 12px;
-}
-.body .search-results .results-list li .search-meta .result-criteria {
-  clear: right;
-  float: right;
-}
-.body .search-results .results-list li .search-meta .result-criteria dl {
-  float: right;
-  width: 230px;
-  margin-bottom: 10px;
-}
-.body .search-results .results-list li .search-meta .result-criteria dl dt {
-  text-align: right;
-  float: left;
-  width: 180px;
-}
-.body .search-results .results-list li .search-meta .result-criteria dl dd {
-  text-align: right;
-  width: 50px;
-  float: left;
 }
 .body .search-results .results-list li .search-meta .see-more {
   background: url("../images/bg-arrow-step-next.png") center right no-repeat #00cc66;
@@ -844,38 +835,154 @@ a:hover {
   padding: 2px 2px 2px 9px;
 }
 .body .search-results .results-list li .search-meta .stars-score {
+  float: right;
+}
+.body .venue-capacity dl {
+  float: right;
+  width: 230px;
+  margin-bottom: 10px;
+}
+.body .venue-capacity dl dt {
+  text-align: right;
+  float: left;
+  width: 180px;
+}
+.body .venue-capacity dl dd {
+  text-align: right;
+  width: 50px;
+  float: left;
+}
+.body .reviews {
+  display: block;
+  color: #1da8cb;
+  font-size: 0.9em;
+  clear: right;
+  float: right;
+  text-decoration: none;
+  background: url("../images/bg-reviews-arrow.png") right center no-repeat;
+  padding-right: 12px;
+}
+.body .stars-score {
   background: url("../images/stars-empty.png") 0 0 no-repeat white;
   width: 130px;
   height: 26px;
-  float: right;
   position: relative;
-  margin-bottom: 10px;
   outline: none;
   cursor: pointer;
+  margin-bottom: 7px;
 }
-.body .search-results .results-list li .search-meta .stars-score .score {
+.body .stars-score .score {
   position: absolute;
   width: 130px;
   height: 26px;
   background: url("../images/stars-full.png") 0 0 no-repeat;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-0 {
+.body .stars-score .score.score-0 {
   width: 0;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-1 {
+.body .stars-score .score.score-1 {
   width: 26px;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-2 {
+.body .stars-score .score.score-2 {
   width: 52px;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-3 {
+.body .stars-score .score.score-3 {
   width: 78px;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-4 {
+.body .stars-score .score.score-4 {
   width: 104px;
 }
-.body .search-results .results-list li .search-meta .stars-score .score.score-5 {
+.body .stars-score .score.score-5 {
   width: 130px;
+}
+.body .venue-information {
+  min-height: 170px;
+}
+.body .venue-information .venue-image-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #cccccc;
+}
+.body .venue-information .copy {
+  margin: 0 230px 0 150px;
+  min-height: 140px;
+}
+.body .venue-information .copy dl {
+  margin-bottom: 0;
+}
+.body .venue-information .venue-details {
+  position: relative;
+  min-height: 145px;
+}
+.body .venue-information .venue-capacity {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.body .venue-information .link {
+  display: block;
+  text-decoration: none;
+}
+.body .venue-information .link.website {
+  margin-bottom: 10px;
+  color: #1da8cb;
+}
+.body .venue-information .link.email {
+  margin-top: 10px;
+  color: #1da8cb;
+}
+.body .venue-information .link.phone {
+  color: #000000;
+  cursor: text;
+}
+.body .venue-information .venue-image-thumbnails {
+  padding-bottom: 15px;
+  clear: both;
+}
+.body .venue-information .venue-image-thumbnails ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+.body .venue-information .venue-image-thumbnails ul li {
+  float: left;
+  padding: 0 10px 10px 0;
+}
+.body .venue-information .venue-image-thumbnails ul li a {
+  border: 1px solid #cccccc;
+  display: block;
+}
+.body .venue-information .venue-image-thumbnails ul li a img {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  /* For IE8 and earlier */
+}
+.body .venue-information .venue-image-thumbnails ul li a.active img {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  /* For IE8 and earlier */
+}
+.body .venue-information .venue-image-thumbnails .more-or-less {
+  width: 69px;
+  height: 68px;
+  color: #1da8cb;
+  font-weight: bold;
+  font-family: "GillSans-Regular";
+  text-align: center;
+  line-height: 65px;
+  font-size: 1.6em;
+  border-radius: 2px;
+  text-decoration: none;
+  background: #ffffff;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.body .venue-information .venue-image-thumbnails .more-or-less:hover {
+  background: #f8f8f8;
 }
 
 .footer {
@@ -1072,6 +1179,17 @@ a:hover {
     width: 100%;
     margin-top: 0;
   }
+  .body .page-title.venue {
+    position: relative;
+    min-height: 60px;
+    border-bottom: none;
+  }
+  .body .page-title.venue .ratings-meta {
+    position: static;
+  }
+  .body .page-title.venue .ratings-meta .reviews {
+    float: left;
+  }
   .body .step {
     border-bottom: none;
     margin-bottom: 0;
@@ -1157,15 +1275,9 @@ a:hover {
     clear: left;
     float: left;
   }
-  .body .search-results .results-list li .search-meta .result-criteria {
+  .body .search-results .results-list li .search-meta .venue-capacity {
     clear: left;
     float: left;
-  }
-  .body .search-results .results-list li .search-meta .result-criteria dl {
-    float: left;
-  }
-  .body .search-results .results-list li .search-meta .result-criteria dl dt {
-    text-align: left;
   }
   .body .search-results .results-list li .search-meta .see-more {
     clear: left;
@@ -1174,6 +1286,43 @@ a:hover {
   .body .search-results .results-list li .search-meta .stars-score {
     float: none;
     margin-bottom: 10px;
+  }
+  .body .venue-capacity dl {
+    float: left;
+  }
+  .body .venue-capacity dl dt {
+    text-align: left;
+  }
+  .body .venue-information .venue-image-large {
+    position: static;
+    width: 100%;
+  }
+  .body .venue-information .copy {
+    margin: 10px 0 5px 0;
+    min-height: auto;
+  }
+  .body .venue-information .copy dl dt {
+    float: left;
+    padding-right: 10px;
+  }
+  .body .venue-information .venue-capacity {
+    position: static;
+  }
+  .body .venue-information .link {
+    display: block;
+    text-decoration: none;
+  }
+  .body .venue-information .link.website {
+    margin-bottom: 0;
+  }
+  .body .venue-information .link.email {
+    margin-top: 0;
+  }
+  .body .venue-information .venue-image-thumbnails ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
   }
 
   .foot .footer-navigation {
