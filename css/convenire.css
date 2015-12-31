@@ -553,7 +553,10 @@ a:hover {
   padding-right: 40px;
 }
 .body .page-title.search .search-meta .search-order ul li a.active.asc {
-  background: url("../images/bg-arrow-up-down-sprite.png") right 14px no-repeat #00cc66;
+  background: url("../images/bg-arrow-up-down-sprite.png") right 13px no-repeat #00cc66;
+}
+.body .page-title.search .search-meta .search-order ul li a.active.desc {
+  background: url("../images/bg-arrow-up-down-sprite.png") right -53px no-repeat #00cc66;
 }
 .body .page-title.venue {
   position: relative;
