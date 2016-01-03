@@ -862,7 +862,7 @@ a:hover {
   clear: right;
   float: right;
   text-decoration: none;
-  background: url("../images/bg-reviews-arrow.png") right center no-repeat;
+  background: url("../images/bg-blue-arrow-sprite.png") right -87px no-repeat;
   padding-right: 12px;
 }
 .body .stars-score {
@@ -992,6 +992,7 @@ a:hover {
 }
 .body .venue-information .venue-reviews .reviews-table {
   width: 100%;
+  border-bottom: 1px solid #cccccc;
 }
 .body .venue-information .venue-reviews .reviews-table .main-header th {
   font-family: "GillSans-Regular";
@@ -999,13 +1000,20 @@ a:hover {
   vertical-align: top;
   font-size: 1.0em;
   box-sizing: border-box;
-  padding: 4px 8px 4px 0;
+  padding: 4px 25px 4px 0;
   white-space: nowrap;
-  border-bottom: 1px solid #cccccc;
+  color: #1da8cb;
 }
 .body .venue-information .venue-reviews .reviews-table .main-header th .sort {
   display: inline-block;
-  text-align: right;
+  text-indent: -9000px;
+  width: 10px;
+}
+.body .venue-information .venue-reviews .reviews-table .main-header th .sort.asc {
+  background: url("../images/bg-blue-arrow-sprite.png") right 8px no-repeat;
+}
+.body .venue-information .venue-reviews .reviews-table .main-header th .sort.desc {
+  background: url("../images/bg-blue-arrow-sprite.png") right -85px no-repeat;
 }
 .body .venue-information .venue-reviews .reviews-table .main-header th.special-col {
   width: 100%;
@@ -1013,33 +1021,47 @@ a:hover {
 .body .venue-information .venue-reviews .reviews-table .main-header th.special-col .sort {
   position: static;
 }
+.body .venue-information .venue-reviews .reviews-table .main-header th:nth-last-child(1) {
+  padding-right: 0;
+  text-align: right;
+}
 .body .venue-information .venue-reviews .reviews-table td {
   vertical-align: top;
   font-size: 0.9em;
   box-sizing: border-box;
   padding: 6px 6px 6px 0;
-  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
 }
 .body .venue-information .venue-reviews .reviews-table td.digit {
   font-size: 1.3em;
   font-weight: bold;
 }
+.body .venue-information .venue-reviews .reviews-table td.digit .star-rating {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url("../images/stars-full.png") 0 0 no-repeat;
+  background-size: cover;
+}
 .body .venue-information .venue-reviews .reviews-table td h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 0 0 4px 0;
-  padding: 6px 6px 6px 100px;
-  border-bottom: 1px solid #cccccc;
+  padding: 0 6px 6px 100px;
+  border-bottom: 1px solid #eaeaea;
+}
+.body .venue-information .venue-reviews .reviews-table td:nth-last-child(1) {
+  padding-right: 0;
 }
 .body .venue-information .venue-reviews .reviews-table td[colspan] {
   padding: 0;
   border: none;
 }
 .body .venue-information .venue-reviews .reviews-table td[colspan] .full-detail {
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 .body .venue-information .venue-reviews .reviews-table .snap-shot {
   padding-top: 10px;
-  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #eaeaea;
 }
 .body .venue-information .venue-reviews .reviews-table span.attendee {
   color: #999;
@@ -1084,8 +1106,13 @@ a:hover {
   font-size: 0.9em;
 }
 .body .venue-information .venue-reviews .reviews-table .criteria td {
+  border-top: none;
   vertical-align: middle;
   padding: 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.body .venue-information .venue-reviews .reviews-table .criteria tr:nth-last-child(1) th, .body .venue-information .venue-reviews .reviews-table .criteria tr:nth-last-child(1) td {
+  border: none;
 }
 .body .venue-information .venue-reviews .reviews-table .criteria .criteria th {
   color: #444444;
