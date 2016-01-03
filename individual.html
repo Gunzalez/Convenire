@@ -109,7 +109,7 @@
                             <span class="cright"></span>
                         </div>
                     </div>
-                    <div class="venue-image-thumbnails">
+                    <div class="venue-image-thumbnails display-none">
                         <ul class="thumbnails">
                             <li><a href="#" data-large-image="uploaded/venue-large-1.jpg" class="active"><img src="uploaded/venue-thumbnail-1.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
                             <li><a href="#" data-large-image="uploaded/venue-large-2.jpg"><img src="uploaded/venue-thumbnail-2.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
@@ -119,9 +119,134 @@
                         </ul>
                         <span class="cleft"></span>
                     </div>
+                    <div class="venue-reviews">
+                        <h2>User reviews</h2>
+                        <table border="0" cellspacing="0" cellpadding="0" class="reviews-table">
+                            <tr class="main-header">
+                                <th scope="col">Review date
+                                    <a href="#" class="sort">sort</a></th>
+                                <th scope="col" class="special-col">Reviewer
+                                    <br /><span class="attendee">Attendee</span>/<span class="planner">Planner</span>
+                                    <a href="#" class="sort">sort</a></th>
+                                <th scope="col">No of <br />Attendees
+                                    <a href="#" class="sort">sort</a></th>
+                                <th scope="col">Rating
+                                    <a href="#" class="sort">sort</a></th>
+                                <th scope="col">Detailed review</th>
+                            </tr>
+                            <tr>
+                                <td>12/02/2016</td>
+                                <td>Mrs A. Thompson<br />
+                                    <span class="attendee">Event Attendee</span><br />
+                                    Sector: Medical</td>
+                                <td class="digit">280</td>
+                                <td class="digit">5 <span class="star-rating"></span></td>
+                                <td><a href="#" class="show-hide-full-details" data-view="review-id-1"><span class="show-details">Show</span><span class="hide-details">Hide</span> <br />review details</a></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="snap-shot">
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="#">Read more</a> </p>
+                                    </div>
+                                    <div id="review-id-1" class="full-detail display-none">
+                                        <h3>Criteria</h3>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
+                                        <tr>
+                                            <th scope="row">1) Contract <span>(overall score)</span></th>
+                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
+                                            <td><span class="scores"><span class="overall-score" style="width: 80%"></span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
+                                            <td><span class="scores"><span class="overall-score" style="width: 89%"></span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
+                                                    <tr>
+                                                        <th scope="row">Was there sufficient time?</th>
+                                                        <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Was packaging provided?</th>
+                                                        <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">How well were issues handled in aftermath?</th>
+                                                        <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4) Accessibility of conference venue <span>(overall score)</span></th>
+                                            <td><span class="scores"><span class="overall-score" style="width: 48%"></span></span></td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>24/12/2015</td>
+                                <td>Mrs Mr S. Wilkins<br />
+                                    <span class="planner">Event Planner</span><br />
+                                    Sector: Automotive</td>
+                                <td class="digit">350</td>
+                                <td class="digit">1 <span class="star-rating"></span></td>
+                                <td><a href="#" data-view="review-id-2" class="show-hide-full-details"><span class="show-details">Show</span><span class="hide-details">Hide</span> <br />review details</a></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="snap-shot">
+                                        <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="#">Read more</a> </p>
+                                    </div>
+                                    <div id="review-id-2" class="full-detail display-none">
+                                        <h3>Criteria</h3>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
+                                            <tr>
+                                                <th scope="row">1) Contract <span>(overall score)</span></th>
+                                                <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
+                                                <td><span class="scores"><span class="overall-score" style="width: 80%"></span></span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
+                                                <td><span class="scores"><span class="overall-score" style="width: 89%"></span></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4) Accessibility of conference venue <span>(overall score)</span></th>
+                                                <td><span class="scores"><span class="overall-score" style="width: 48%"></span></span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-
-                <div style="height: 600px"></div>
 
             </div>
             <div class="col col-1-of-3 col-hide">
