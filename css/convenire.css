@@ -312,9 +312,40 @@ a:hover {
 .hero .page-image {
   width: 100%;
   height: 247px;
+  position: relative;
 }
 .hero .page-image.review {
   background: url("../images/bg-page-image-review.png") 0 0 no-repeat;
+}
+.hero .page-image .cta {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.hero .page-image .cta a {
+  display: block;
+}
+.hero .page-image .cta .text {
+  display: inline-block;
+  margin-right: 15px;
+  background: url("../images/bg-cta-text.png") 0 0 no-repeat;
+  width: 236px;
+  height: 38px;
+  line-height: 38px;
+  text-align: right;
+  padding-right: 15px;
+  font-family: "GillSans-Regular";
+  text-transform: uppercase;
+  float: right;
+  color: #000000;
+  font-size: 1.2em;
+}
+.hero .page-image .cta .icon {
+  float: right;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url("../images/bg-arrow-fixed.png") center center no-repeat #00cc66;
 }
 
 .body {
@@ -1489,14 +1520,10 @@ a:hover {
     display: none;
   }
   .body .venue-information .venue-reviews .reviews-table td {
-    padding: 6px 6px 6px 0;
     display: block;
   }
   .body .venue-information .venue-reviews .reviews-table td h3 {
-    font-size: 1.1em;
-    margin: 0 0 4px 0;
-    padding: 0 6px 6px 0;
-    border-bottom: 1px solid #eaeaea;
+    padding-left: 0;
   }
   .body .venue-information .venue-reviews .reviews-table td:nth-last-child(1) {
     padding-right: 0;
@@ -1505,30 +1532,12 @@ a:hover {
     padding: 0;
     border: none;
   }
-  .body .venue-information .venue-reviews .reviews-table td[colspan] .full-detail {
-    padding-bottom: 25px;
-  }
   .body .venue-information .venue-reviews .reviews-table .criteria th {
-    padding: 4px 0 4px 0px;
-    border-bottom: 1px solid #eaeaea;
-    color: #1da8cb;
-    font-size: 1.2em;
-    font-weight: normal;
-    width: 100%;
+    padding: 4px 0;
     display: block;
   }
   .body .venue-information .venue-reviews .reviews-table .criteria th span {
-    color: #444444;
-    font-size: 0.9em;
     display: block;
-  }
-  .body .venue-information .venue-reviews .reviews-table .criteria td {
-    display: block;
-    border-top: none;
-    vertical-align: middle;
-    padding: 0;
-    border-bottom: 1px solid #eaeaea;
-    width: 100%;
   }
   .body .venue-information .venue-reviews .reviews-table .criteria tr:nth-last-child(1) th, .body .venue-information .venue-reviews .reviews-table .criteria tr:nth-last-child(1) td {
     border: none;
