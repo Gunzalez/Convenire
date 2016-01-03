@@ -37,7 +37,7 @@
         },
 
         resize: function () {
-            // null
+            convenire.search.resize();
         },
 
         init: function () {
@@ -57,6 +57,51 @@
         }
     };
 
+    convenire.search = {
+        $form: $('#search'),
+        $locationField: $('#location', this.$form),
+        $resultContainer: $('#results-container'),
+        $makeAjaxCall: function(){
+            var self = this,
+                term = this.$locationField.val().trim();
+
+            if(term.length > 2){
+                var offset = self.$locationField.offset();
+                var posY = offset.top + self.$locationField.height() + 4; // 4 for padding
+                var posX = offset.left;
+
+                self.$resultContainer.css({
+                    top: posY,
+                    left: posX
+                });
+
+                // TODO make real ajax call and put results into div before displaying
+                $.post("ajax-result.php", function(data){
+                    self.$resultContainer.html(data).removeClass('hidden');
+                });
+
+            } else {
+                self.$resultContainer.addClass('hidden');
+            }
+        },
+
+        init: function(){
+            var self = this;
+
+            self.$locationField.on('keypress', function(){
+                self.$makeAjaxCall();
+            });
+
+            self.$form.on('click', function(){
+                self.$resultContainer.addClass('hidden');
+            });
+        },
+
+        resize: function () {
+            this.$resultContainer.addClass('hidden');
+        }
+    };
+
     convenire.carousel = {
         $stage: $('.featured-large').find('img')[0],
         $nav: $('.featured-navigation'),
@@ -68,7 +113,7 @@
 
         next: function () {
             var cnt = $('a', this.$nav).length,
-                    activeIndex = $('a', this.$nav).index($('.active'));
+                activeIndex = $('a', this.$nav).index($('.active'));
 
             if (activeIndex == (cnt - 1)) {
                 activeIndex = 0;
@@ -81,7 +126,7 @@
 
         prev: function () {
             var cnt = $('a', this.$nav).length,
-                    activeIndex = $('a', this.$nav).index($('.active'));
+                activeIndex = $('a', this.$nav).index($('.active'));
 
             if (activeIndex == 0) {
                 activeIndex = (cnt - 1);
@@ -231,6 +276,7 @@
         convenire.mobileNav.init();
         convenire.news.init();
         convenire.venue.init();
+        convenire.search.init();
 
         // resize triggers
         $(window).on('resize', function () {
