@@ -238,11 +238,11 @@
                 event.preventDefault();
                 var viewId = $(this).data('view');
                 if (!$(this).hasClass('shown')) {
-                    $('#' + viewId, self.venue).removeClass('display-none');
+                    $('#' + viewId, self.venue).addClass('dropped-down');
                     window.location.hash = '#'+viewId;
                     $(this).addClass('shown');
                 } else {
-                    $('#' + viewId, self.venue).addClass('display-none');
+                    $('#' + viewId, self.venue).removeClass('dropped-down');
                     $(this).removeClass('shown');
                 }
             });
