@@ -73,86 +73,323 @@
     <div class="body">
         <div class="main-copy">
             <div class="col col-2-of-3">
+
+                <form name="step-one" id="review-form" action="page.php" method="post">
                 <div class="page-title review">
                     <h2>Post a review</h2>
                     <div class="review-progress-bar">
                         <p class="progress-label">Progress</p>
                         <div class="review-bar">
-                            <div class="review-progress" style="width: 28%"></div>
+                            <div class="review-progress"></div>
                         </div>
                         <span class="cleft"></span>
                     </div>
                     <div class="cboth"></div>
                 </div>
-                <div class="step">
-                    <div class="step-navigation">
-                        <a href="#" class="previous-step">Previous</a>
-                        <a href="#" class="next-step">Next</a>
-                        <span class="current-step-title">2. Please complete the registration form</span>
-                        <span class="cboth"></span>
-                    </div>
 
-                    <form class="step-form" name="" id="" action="somepage.php" method="post">
-                        <div class="row">
-                            <label for="firstname">First name</label>
-                            <input type="text" value="" name="firstname" id="firstname">
-                        </div>
-                        <div class="row">
-                            <label for="lastname">Last name</label>
-                            <input type="text" value="" name="firstname" id="lastname">
-                        </div>
-                        <div class="row">
-                            <label for="business">Institute/Business/Organisation</label>
-                            <input type="text" value="" name="business" id="business">
-                        </div>
-                        <div class="row">
-                            <label for="town-city">Town/City</label>
-                            <input type="text" value="" name="town-city" id="town-city">
-                        </div>
-                        <div class="row">
-                            <label for="country">Country</label>
-                            <input type="text" value="" name="country" id="country">
-                        </div>
-                        <div class="row">
-                            <label for="position">Title/Position</label>
-                            <input type="text" value="" name="position" id="position">
-                        </div>
-                        <div class="row">
-                            <label for="email">Email</label>
-                            <input type="email" value="" name="email" id="email">
-                        </div>
-                        <div class="row">
-                            <label for="select-box">Select Box</label>
-                            <select id="select-box" name="select-box">
-                                <option value="value1">One value</option>
-                                <option value="value1">Another Value</option>
-                                <option value="value3">Value No.3</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <label for="textarea">Textarea</label>
-                            <textarea name="textarea" id="textarea" rows="6"></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="like-input radio">
-                                <input type="radio" name="radio-button" value="x" checked id="radio-x"> <label for="radio-x">Male</label>
-                                <input type="radio" name="radio-button" value="y" id="radio-y"> <label for="radio-y">Female</label>
-                                <input type="radio" name="radio-button" value="u" id="radio-u"> <label for="radio-u">Unicorn</label>
+                <ul class="form-steps">
+                    <li class="step-n" id="step-0">
+                        <div class="step">
+                            <div class="step-navigation">
+                                <a href="#" class="prev">Previous</a>
+                                <a href="#" class="next">Next</a>
+                                <span class="current-step-title">1. Please provide personal details</span>
+                                <span class="cboth"></span>
+                            </div>
+                            <div class="form-step">
+                                <div class="row">
+                                    <label for="firstname">First name</label>
+                                    <input type="text" value="" name="firstname" id="firstname">
+                                </div>
+                                <div class="row">
+                                    <label for="lastname">Last name</label>
+                                    <input type="text" value="" name="firstname" id="lastname">
+                                </div>
+                                <div class="row">
+                                    <label for="business">Institute/Business/Organisation</label>
+                                    <input type="text" value="" name="business" id="business">
+                                </div>
+                                <div class="row">
+                                    <label for="town-city">Town/City</label>
+                                    <input type="text" value="" name="town-city" id="town-city">
+                                </div>
+                                <div class="row">
+                                    <label for="country">Country</label>
+                                    <input type="text" value="" name="country" id="country">
+                                </div>
+                                <div class="row">
+                                    <label for="position">Title/Position</label>
+                                    <input type="text" value="" name="position" id="position">
+                                </div>
+                                <div class="row">
+                                    <label for="email">Email</label>
+                                    <input type="email" value="" name="email" id="email">
+                                </div>
+                                <div class="row">
+                                    <label for="select-box">Select Box</label>
+                                    <select id="select-box" name="select-box">
+                                        <option value="value1">One value</option>
+                                        <option value="value1">Another Value</option>
+                                        <option value="value3">Value No.3</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <label for="textarea">Textarea</label>
+                                    <textarea name="textarea" id="textarea" rows="6"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input radio">
+                                        <input type="radio" name="radio-button" value="x" checked id="radio-x"> <label for="radio-x">Male</label>
+                                        <input type="radio" name="radio-button" value="y" id="radio-y"> <label for="radio-y">Female</label>
+                                        <input type="radio" name="radio-button" value="u" id="radio-u"> <label for="radio-u">Unicorn</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input checkbox">
+                                        <label for="confidentiality">This information will remain ConVenire staff conducts random check in order to ensure review authenticity.</label>
+                                        <input type="checkbox" name="confidentiality" id="confidentiality">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="like-input checkbox">
-                                <label for="confidentiality">This information will remain ConVenire staff conducts random check in order to ensure review authenticity.</label>
-                                <input type="checkbox" name="confidentiality" id="confidentiality">
+                    </li>
+                    <li class="step-n" id="step-1">
+                        <div class="step">
+                            <div class="step-navigation">
+                                <a href="#" class="prev">Previous</a>
+                                <a href="#" class="next">Next</a>
+                                <span class="current-step-title">2. Please complete the registration form</span>
+                                <span class="cboth"></span>
+                            </div>
+                            <div class="form-step">
+                                <div class="row">
+                                    <label for="someotherdetail">Some other detail</label>
+                                    <input type="text" value="" name="someotherdetail" id="someotherdetail">
+                                </div>
+                                <div class="row">
+                                    <label for="lastname">Last name</label>
+                                    <input type="text" value="" name="firstname" id="lastname">
+                                </div>
+                                <div class="row">
+                                    <label for="business">Institute/Business/Organisation</label>
+                                    <input type="text" value="" name="business" id="business">
+                                </div>
+                                <div class="row">
+                                    <label for="town-city">Town/City</label>
+                                    <input type="text" value="" name="town-city" id="town-city">
+                                </div>
+                                <div class="row">
+                                    <label for="country">Country</label>
+                                    <input type="text" value="" name="country" id="country">
+                                </div>
+                                <div class="row">
+                                    <label for="position">Title/Position</label>
+                                    <input type="text" value="" name="position" id="position">
+                                </div>
+                                <div class="row">
+                                    <label for="email">Email</label>
+                                    <input type="email" value="" name="email" id="email">
+                                </div>
+                                <div class="row">
+                                    <label for="select-box">Select Box</label>
+                                    <select id="select-box" name="select-box">
+                                        <option value="value1">One value</option>
+                                        <option value="value1">Another Value</option>
+                                        <option value="value3">Value No.3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="like-input">
-                                <button class="submit">Submit</button>
+                    </li>
+                    <li class="step-n" id="step-2">
+                        <div class="step">
+                            <div class="step-navigation">
+                                <a href="#" class="prev">Previous</a>
+                                <a href="#" class="next">Next</a>
+                                <span class="current-step-title">3. Please enter your information</span>
+                                <span class="cboth"></span>
+                            </div>
+                            <div class="form-step">
+                                <div class="row">
+                                    <label for="firstname">First name</label>
+                                    <input type="text" value="" name="firstname" id="firstname">
+                                </div>
+                                <div class="row">
+                                    <label for="lastname">Last name</label>
+                                    <input type="text" value="" name="firstname" id="lastname">
+                                </div>
+                                <div class="row">
+                                    <label for="business">Institute/Business/Organisation</label>
+                                    <input type="text" value="" name="business" id="business">
+                                </div>
+                                <div class="row">
+                                    <label for="town-city">Town/City</label>
+                                    <input type="text" value="" name="town-city" id="town-city">
+                                </div>
+                                <div class="row">
+                                    <label for="country">Country</label>
+                                    <input type="text" value="" name="country" id="country">
+                                </div>
+                                <div class="row">
+                                    <label for="position">Title/Position</label>
+                                    <input type="text" value="" name="position" id="position">
+                                </div>
+                                <div class="row">
+                                    <label for="email">Email</label>
+                                    <input type="email" value="" name="email" id="email">
+                                </div>
+                                <div class="row">
+                                    <label for="select-box">Select Box</label>
+                                    <select id="select-box" name="select-box">
+                                        <option value="value1">One value</option>
+                                        <option value="value1">Another Value</option>
+                                        <option value="value3">Value No.3</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <label for="textarea">Textarea</label>
+                                    <textarea name="textarea" id="textarea" rows="6"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input radio">
+                                        <input type="radio" name="radio-button" value="x" checked id="radio-x"> <label for="radio-x">Male</label>
+                                        <input type="radio" name="radio-button" value="y" id="radio-y"> <label for="radio-y">Female</label>
+                                        <input type="radio" name="radio-button" value="u" id="radio-u"> <label for="radio-u">Unicorn</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input checkbox">
+                                        <label for="confidentiality">This information will remain ConVenire staff conducts random check in order to ensure review authenticity.</label>
+                                        <input type="checkbox" name="confidentiality" id="confidentiality">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </li>
+                    <li class="step-n" id="step-3">
+                        <div class="step">
+                            <div class="step-navigation">
+                                <a href="#" class="prev">Previous</a>
+                                <a href="#" class="next">Next</a>
+                                <span class="current-step-title">4. Please complete the form below</span>
+                                <span class="cboth"></span>
+                            </div>
+                            <div class="form-step">
+                                <div class="row">
+                                    <label for="firstname">First name</label>
+                                    <input type="text" value="" name="firstname" id="firstname">
+                                </div>
+                                <div class="row">
+                                    <label for="lastname">Last name</label>
+                                    <input type="text" value="" name="firstname" id="lastname">
+                                </div>
+                                <div class="row">
+                                    <label for="business">Institute/Business/Organisation</label>
+                                    <input type="text" value="" name="business" id="business">
+                                </div>
+                                <div class="row">
+                                    <label for="textarea">Textarea</label>
+                                    <textarea name="textarea" id="textarea" rows="6"></textarea>
+                                </div>
+                                <div class="row">
+                                    <label for="town-city">Town/City</label>
+                                    <input type="text" value="" name="town-city" id="town-city">
+                                </div>
+                                <div class="row">
+                                    <label for="country">Country</label>
+                                    <input type="text" value="" name="country" id="country">
+                                </div>
+                                <div class="row">
+                                    <label for="position">Title/Position</label>
+                                    <input type="text" value="" name="position" id="position">
+                                </div>
+                                <div class="row">
+                                    <div class="like-input radio">
+                                        <input type="radio" name="radio-button" value="x" checked id="radio-x"> <label for="radio-x">Male</label>
+                                        <input type="radio" name="radio-button" value="y" id="radio-y"> <label for="radio-y">Female</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input checkbox">
+                                        <label for="confidentiality">This information will remain ConVenire staff conducts random check in order to ensure review authenticity.</label>
+                                        <input type="checkbox" name="confidentiality" id="confidentiality">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="step-n" id="step-4">
+                        <div class="step">
+                            <div class="step-navigation">
+                                <a href="#" class="prev">Previous</a>
+                                <a href="#" class="next">Next</a>
+                                <span class="current-step-title">5. Complete final part of form</span>
+                                <span class="cboth"></span>
+                            </div>
+                            <div class="form-step">
+                                <div class="row">
+                                    <label for="firstname">First name</label>
+                                    <input type="text" value="" name="firstname" id="firstname">
+                                </div>
+                                <div class="row">
+                                    <label for="lastname">Last name</label>
+                                    <input type="text" value="" name="firstname" id="lastname">
+                                </div>
+                                <div class="row">
+                                    <label for="business">Institute/Business/Organisation</label>
+                                    <input type="text" value="" name="business" id="business">
+                                </div>
+                                <div class="row">
+                                    <label for="town-city">Town/City</label>
+                                    <input type="text" value="" name="town-city" id="town-city">
+                                </div>
+                                <div class="row">
+                                    <label for="country">Country</label>
+                                    <input type="text" value="" name="country" id="country">
+                                </div>
+                                <div class="row">
+                                    <label for="position">Title/Position</label>
+                                    <input type="text" value="" name="position" id="position">
+                                </div>
+                                <div class="row">
+                                    <label for="email">Email</label>
+                                    <input type="email" value="" name="email" id="email">
+                                </div>
+                                <div class="row">
+                                    <label for="select-box">Select Box</label>
+                                    <select id="select-box" name="select-box">
+                                        <option value="value1">One value</option>
+                                        <option value="value1">Another Value</option>
+                                        <option value="value3">Value No.3</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <label for="textarea">Textarea</label>
+                                    <textarea name="textarea" id="textarea" rows="6"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input radio">
+                                        <input type="radio" name="radio-button" value="x" checked id="radio-x"> <label for="radio-x">Male</label>
+                                        <input type="radio" name="radio-button" value="y" id="radio-y"> <label for="radio-y">Female</label>
+                                        <input type="radio" name="radio-button" value="u" id="radio-u"> <label for="radio-u">Unicorn</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input checkbox">
+                                        <label for="confidentiality">This information will remain ConVenire staff conducts random check in order to ensure review authenticity.</label>
+                                        <input type="checkbox" name="confidentiality" id="confidentiality">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="like-input">
+                                        <button class="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </form>
 
             </div>
             <div class="col col-1-of-3 col-hide">
@@ -201,5 +438,6 @@
 <script src="js/vendors/jquery-1.9.1.min.js"></script>
 <script src="js/convenire.js"></script>
 <script type="text/javascript" src="js/mmenu/jquery.mmenu.min.all.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
 </body>
 </html>

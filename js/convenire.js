@@ -38,6 +38,7 @@
 
         resize: function () {
             convenire.search.resize();
+            convenire.review.resize();
         },
 
         init: function () {
@@ -268,6 +269,63 @@
         }
     };
 
+    convenire.review = {
+        $html: $('#review-form'),
+        $progress: $('.review-progress', this.$html),
+        $steps: $('.form-steps', this.$html),
+        $slides: $('.step-n', this.$steps),
+        $stepButtons: $('.step-navigation a', this.$steps),
+        slidePos: 0,
+
+        resize: function(){
+            this.$steps.removeClass('animated');
+            this.$steps.width(this.$html.width() * this.$slides.length);
+            this.$slides.width(this.$html.width());
+            if(this.slidePos != 0 ){
+                var newLeftMargin = '-' + ( this.$html.width() * parseInt(this.slidePos) ) + 'px';
+            } else {
+                var newLeftMargin = '0px';
+            }
+            this.$steps.css('margin-left', newLeftMargin);
+        },
+
+        init: function(){
+            var self = this;
+
+            self.$stepButtons.first().addClass('disabled');
+            self.$stepButtons.last().addClass('disabled');
+
+            self.$stepButtons.on('click', function(event){
+                event.preventDefault();
+                if(!$(this).hasClass('disabled')){
+
+                    self.$steps.addClass('animated');
+                    var currentPos = $(this).parents('.step-n').attr('id').replace('step-',''),
+                        newPosition;
+
+                    if($(this).hasClass('next')) {
+                        newPosition = parseInt(currentPos) + 1;
+                    } else {
+                        newPosition = parseInt(currentPos) - 1;
+                    }
+
+                    var newLeftMargin = '-' + (self.$html.width() * newPosition) + 'px';
+                    self.$steps.css('margin-left', newLeftMargin);
+                    self.slidePos = newPosition;
+
+                    self.$progress.css({
+                        width: (((newPosition+1)/self.$slides.length) * 100 ) + '%'
+                    });
+                }
+            });
+
+            this.$progress.css({
+                width: (((this.slidePos+1)/this.$slides.length) * 100 ) + '%'
+            });
+            this.resize();
+        }
+    };
+
     convenire.init = function () {
 
         // all init
@@ -277,6 +335,7 @@
         convenire.news.init();
         convenire.venue.init();
         convenire.search.init();
+        convenire.review.init();
 
         // resize triggers
         $(window).on('resize', function () {

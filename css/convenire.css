@@ -579,6 +579,10 @@ a:hover {
   left: 0;
   height: 8px;
   background: #00cc66;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .body .page-title.news {
   padding-bottom: 5px;
@@ -681,7 +685,6 @@ a:hover {
   min-height: 55px;
 }
 .body .step {
-  border-bottom: 1px solid #cccccc;
   margin-bottom: 10px;
 }
 .body .step-navigation a {
@@ -697,22 +700,31 @@ a:hover {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.body .step-navigation a.previous-step {
+.body .step-navigation a.prev {
   background: url("../images/bg-arrow-step-prev.png") center left no-repeat #00cc66;
   float: left;
   text-align: right;
   padding-right: 9px;
 }
-.body .step-navigation a.next-step {
+.body .step-navigation a.next {
   background: url("../images/bg-arrow-step-next.png") center right no-repeat #00cc66;
   float: right;
   padding-left: 9px;
 }
-.body .step-navigation a:hover.previous-step {
+.body .step-navigation a:hover.prev {
   background: url("../images/bg-arrow-step-prev.png") center left no-repeat #00a351;
 }
-.body .step-navigation a:hover.next-step {
+.body .step-navigation a:hover.next {
   background: url("../images/bg-arrow-step-next.png") center right no-repeat #00a351;
+}
+.body .step-navigation a.disabled {
+  background: #eaeaea;
+  color: #999;
+  cursor: default;
+}
+.body .step-navigation a.disabled:hover {
+  background: #eaeaea;
+  color: #999;
 }
 .body .step-navigation .current-step-title {
   line-height: 28px;
@@ -721,21 +733,21 @@ a:hover {
   font-size: 1.2em;
   float: left;
 }
-.body .step-form {
+.body .form-step {
   clear: both;
   padding: 20px 0;
 }
-.body .step-form .row {
+.body .form-step .row {
   content: "";
   clear: both;
   display: block;
   padding-bottom: 15px;
   margin: 0;
 }
-.body .step-form .row:nth-last-child(1) {
+.body .form-step .row:nth-last-child(1) {
   padding-bottom: 0;
 }
-.body .step-form label {
+.body .form-step label {
   width: 50%;
   padding: 0 30px 0 0;
   line-height: 28px;
@@ -745,8 +757,8 @@ a:hover {
   font-size: 0.9em;
   font-weight: normal;
 }
-.body .step-form input[type="text"],
-.body .step-form input[type="email"] {
+.body .form-step input[type="text"],
+.body .form-step input[type="email"] {
   width: 50%;
   float: right;
   padding: 2px 4px;
@@ -756,7 +768,7 @@ a:hover {
   -webkit-appearance: none;
   border-radius: 0;
 }
-.body .step-form select {
+.body .form-step select {
   width: 50%;
   float: right;
   padding: 2px 30px 2px 4px;
@@ -766,7 +778,7 @@ a:hover {
   outline: none;
   background: url("../images/bg-select-box.png") center right no-repeat;
 }
-.body .step-form textarea {
+.body .form-step textarea {
   padding: 2px 4px;
   width: 50%;
   outline: none;
@@ -775,51 +787,59 @@ a:hover {
   -webkit-appearance: none;
   border-radius: 0;
 }
-.body .step-form .like-input {
+.body .form-step .like-input {
   width: 50%;
   float: right;
 }
-.body .step-form .like-input.radio {
+.body .form-step .like-input.radio {
   margin: 0;
   min-height: 20px;
 }
-.body .step-form .like-input.radio label {
+.body .form-step .like-input.radio label {
   padding: 0 25px 0 0;
   width: auto;
   float: left;
   line-height: 110%;
   min-height: auto;
 }
-.body .step-form .like-input.radio input[type="radio"] {
+.body .form-step .like-input.radio input[type="radio"] {
   cursor: pointer;
   margin: 0 10px 0 0;
   float: left;
   position: static;
 }
-.body .step-form .like-input.checkbox {
+.body .form-step .like-input.checkbox {
   margin: 0;
   position: relative;
 }
-.body .step-form .like-input.checkbox label {
+.body .form-step .like-input.checkbox label {
   width: auto;
   text-align: left;
   line-height: 120%;
   padding: 0 0 0 24px;
 }
-.body .step-form .like-input.checkbox input[type="checkbox"] {
+.body .form-step .like-input.checkbox input[type="checkbox"] {
   position: absolute;
   top: 2px;
   left: 0;
   cursor: pointer;
   margin: 0;
 }
-.body .step-form .submit {
+.body .form-step .submit {
   background: url("../images/bg-arrow-step-next.png") center right no-repeat #00cc66;
   color: #ffffff;
   border: none;
   font-family: "GillSans-Regular";
   padding: 4px 35px 4px 12px;
   outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.body .form-step .submit:hover {
+  background: url("../images/bg-arrow-step-next.png") center right no-repeat #00a351;
 }
 .body .highlighted {
   position: relative;
@@ -1304,6 +1324,26 @@ a:hover {
   width: 120px;
   background: #00cc66;
 }
+.body #review-form {
+  width: 100%;
+  overflow: hidden;
+}
+.body .form-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 0;
+}
+.body .form-steps li {
+  width: 100%;
+  float: left;
+}
+.body .form-steps.animated {
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -o-transition: all 0.75s;
+  transition: all 0.75s;
+}
 
 .footer {
   width: 1040px;
@@ -1526,28 +1566,28 @@ a:hover {
     padding: 15px 0 0 0;
     width: 100%;
   }
-  .body .step-form {
+  .body .form-step {
     clear: both;
     padding: 10px 0 0 0;
   }
-  .body .step-form label {
+  .body .form-step label {
     width: 100%;
     padding: 0;
     float: none;
     text-align: left;
   }
-  .body .step-form input[type="text"],
-  .body .step-form input[type="email"] {
+  .body .form-step input[type="text"],
+  .body .form-step input[type="email"] {
     width: 100%;
     float: none;
     padding: 4px 6px;
   }
-  .body .step-form select,
-  .body .step-form textarea {
+  .body .form-step select,
+  .body .form-step textarea {
     width: 100%;
     float: none;
   }
-  .body .step-form .like-input {
+  .body .form-step .like-input {
     width: 100%;
     float: none;
   }
