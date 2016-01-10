@@ -104,7 +104,7 @@
     };
 
     convenire.carousel = {
-        $stage: $('.featured-large').find('img')[0],
+        $stage: $('.featured-large'),
         $nav: $('.featured-navigation'),
         auto: {
             start: true,
@@ -144,8 +144,15 @@
             // sets up clicking
             self.$nav.on('click', 'a', function (evt) {
                 evt.preventDefault();
-                if (!$(this).hasClass('active')) {
-                    $(self.$stage).attr('src', $(this).attr('data-featured-image'));
+                if (!$(this).hasClass('active')){
+                    var $newImg = $('<img class="feature-image" src="' + $(this).attr('data-featured-image') +'" alt="' + $(this).find('img').attr('alt') + '" style="display:none" />');
+
+                    $('.feature-image', self.$stage).fadeOut(function(){
+                        $(this).remove();
+                    });
+                    $(self.$stage).append($newImg);
+                    $newImg.fadeIn();
+
                     $('a', self.$nav).removeAttr('class');
                     $(this).addClass('active');
                 }
@@ -157,6 +164,7 @@
                 imagesToPreload.push($(obj).attr('data-featured-image'))
             });
             convenire.utils.preload(imagesToPreload, function () {
+                // show navigation
                 self.$nav.removeClass('display-none');
 
                 // setting up auto rotate
