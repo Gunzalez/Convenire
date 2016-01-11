@@ -1106,7 +1106,7 @@ a:hover {
 }
 .body .stars-score .full-score table .score-value {
   padding-left: 12px;
-  text-align: right;
+  text-align: left;
 }
 .body .stars-score:hover .full-score {
   display: block;
@@ -1114,21 +1114,8 @@ a:hover {
 .body .venue-information {
   min-height: 170px;
 }
-.body .venue-information .venue-image-large {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #cccccc;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.body .venue-information .venue-image-large:hover {
-  opacity: 0.7;
-}
 .body .venue-information .copy {
-  margin: 0 230px 0 150px;
+  margin: 0 230px 0 0;
   min-height: 140px;
 }
 .body .venue-information .copy dl {
@@ -1545,6 +1532,11 @@ a:hover {
     background: url("../images/bg-arrow-fixed.png") 50% 50% no-repeat #00cc66;
     width: 52px;
   }
+  .hero .featured-description .detail-link:hover {
+    height: 54px;
+    background: url("../images/bg-arrow-fixed.png") 50% 50% no-repeat #00a351;
+    width: 52px;
+  }
   .hero .page-image .cta .text {
     margin-right: 0;
   }
@@ -1771,6 +1763,10 @@ a:hover {
   }
   .body .venue-information .venue-reviews .reviews-table .criteria .scores .overall-score {
     width: 100%;
+  }
+  .body .stars-score .full-score {
+    right: auto;
+    left: 0;
   }
 
   .foot .footer-navigation {

@@ -228,9 +228,12 @@
             self.$nav.on('click', self.aTag, function (evt) {
                 evt.preventDefault();
                 if (!$(this).hasClass('active')) {
+
                     $(self.$stage).attr('src', $(this).attr('data-large-image'));
                     $(self.aTag, self.$nav).removeClass('active');
                     $(this).addClass('active');
+
+
                 }
             });
 
