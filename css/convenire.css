@@ -1111,19 +1111,15 @@ a:hover {
 .body .stars-score:hover .full-score {
   display: block;
 }
-.body .venue-information {
-  min-height: 170px;
-}
 .body .venue-information .copy {
   margin: 0 230px 0 0;
-  min-height: 140px;
 }
 .body .venue-information .copy dl {
   margin-bottom: 0;
 }
 .body .venue-information .venue-details {
   position: relative;
-  min-height: 145px;
+  padding-bottom: 20px;
 }
 .body .venue-information .venue-capacity {
   position: absolute;
@@ -1135,11 +1131,10 @@ a:hover {
   text-decoration: none;
 }
 .body .venue-information .link.website {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #1da8cb;
 }
 .body .venue-information .link.email {
-  margin-top: 10px;
   color: #1da8cb;
 }
 .body .venue-information .link.phone {

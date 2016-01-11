@@ -38,7 +38,7 @@
 			aspectRatio: false,
 			topRatio: 0.5,
 
-			fixed: !$.browser.msie || $.browser.version > 6,
+			fixed: false,
 			scrolling: 'auto', // 'auto', 'yes' or 'no'
 			wrapCSS: 'fancybox-default',
 
@@ -70,7 +70,7 @@
 			tpl: {
 				wrap: '<div class="fancybox-wrap"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div>',
 				image: '<img class="fancybox-image" src="{href}" alt="" />',
-				iframe: '<iframe class="fancybox-iframe" name="fancybox-frame{rnd}" frameborder="0" hspace="0" ' + ($.browser.msie ? 'allowtransparency="true""' : '') + ' scrolling="{scrolling}" src="{href}"></iframe>',
+				iframe: '<iframe class="fancybox-iframe" name="fancybox-frame{rnd}" frameborder="0" hspace="0" scrolling="{scrolling}" src="{href}"></iframe>',
 				swf: '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%"><param name="wmode" value="transparent" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="{href}" /><embed src="{href}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="100%" height="100%" wmode="transparent"></embed></object>',
 				error: '<p class="fancybox-error">The requested content cannot be loaded.<br/>Please try again later.</p>',
 				closeBtn: '<div title="Close" class="fancybox-item fancybox-close"></div>',
@@ -1156,15 +1156,16 @@
 			//Reset width/height so it will not mess
 			this.overlay.width(0).height(0);
 
-			if ($.browser.msie) {
-				scrollWidth = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth);
-				offsetWidth = Math.max(document.documentElement.offsetWidth, document.body.offsetWidth);
-
-				width = scrollWidth < offsetWidth ? W.width() : scrollWidth;
-
-			} else {
-				width = D.width();
-			}
+			//if ($.browser.msie) {
+			//	scrollWidth = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth);
+			//	offsetWidth = Math.max(document.documentElement.offsetWidth, document.body.offsetWidth);
+            //
+			//	width = scrollWidth < offsetWidth ? W.width() : scrollWidth;
+            //
+			//} else {
+			//	width = D.width();
+			//}
+            width = D.width();
 
 			this.overlay.width(width).height(D.height());
 		},

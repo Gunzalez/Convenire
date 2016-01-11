@@ -225,26 +225,7 @@
             var self = this;
 
             // sets up clicking
-            self.$nav.on('click', self.aTag, function (evt) {
-                evt.preventDefault();
-                if (!$(this).hasClass('active')) {
-
-                    $(self.$stage).attr('src', $(this).attr('data-large-image'));
-                    $(self.aTag, self.$nav).removeClass('active');
-                    $(this).addClass('active');
-
-
-                }
-            });
-
-            // nav is initially hidden, shown after large images have preloaded
-            var imagesToPreload = [];
-            $(self.aTag, self.$nav).each(function (i, obj) {
-                imagesToPreload.push($(obj).attr('data-large-image'));
-            });
-            convenire.utils.preload(imagesToPreload, function () {
-                self.$nav.removeClass('display-none');
-            });
+            $(".fancybox").fancybox();
 
             self.$showHideButtons.on('click', function (event) {
                 event.preventDefault();
