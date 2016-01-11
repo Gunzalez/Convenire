@@ -23,7 +23,7 @@
 		version: '2.0.3',
 
 		defaults: {
-			padding: 15,
+			padding: 2,
 			margin: 20,
 
 			width: 800,
