@@ -46,10 +46,10 @@
                 <p>International Conference Venue Review Service</p>
             </div>
             <div class="page-image review">
-                <div class="cta">
-                    <span class="icon"></span>
-                    <span class="text"></span>
-                </div>
+                <!--<div class="cta">-->
+                    <!--<span class="icon"></span>-->
+                    <!--<span class="text"></span>-->
+                <!--</div>-->
             </div>
 
             <form id="search" name="search" action="results.html" method="post" class="search" autocomplete="off">
@@ -166,13 +166,15 @@
                                     <label for="someotherdetail">Some other detail</label>
                                     <input type="text" value="" name="someotherdetail" id="someotherdetail">
                                 </div>
-                                <div class="row">
-                                    <label for="lastname">Last name</label>
-                                    <input type="text" value="" name="firstname" id="lastname">
+                                <div class="row error">
+                                    <label for="someField">Some field</label>
+                                    <input type="text" value="" name="someField" id="someField">
+                                    <span class="error">Example error message</span>
                                 </div>
-                                <div class="row">
-                                    <label for="business">Institute/Business/Organisation</label>
-                                    <input type="text" value="" name="business" id="business">
+                                <div class="row error">
+                                    <label for="anotherField">Another field</label>
+                                    <input type="text" value="" name="anotherField" id="anotherField">
+                                    <span class="error">Mandatory field</span>
                                 </div>
                                 <div class="row">
                                     <label for="town-city">Town/City</label>

@@ -39,6 +39,8 @@
         resize: function () {
             convenire.search.resize();
             convenire.review.resize();
+
+            //$('.google-map').find('iframe').width($(window).width());
         },
 
         init: function () {
@@ -224,8 +226,10 @@
         init: function () {
             var self = this;
 
-            // sets up clicking
-            $(".fancybox").fancybox();
+            // sets up fancybox image enlargement
+            if($(".fancybox").length > 0){
+                $(".fancybox").fancybox();
+            }
 
             self.$showHideButtons.on('click', function (event) {
                 event.preventDefault();

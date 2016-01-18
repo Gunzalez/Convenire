@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: #ffffff;
-  color: #444444;
+  color: #111111;
   -webkit-text-size-adjust: none;
 }
 
@@ -412,8 +412,8 @@ a:hover {
   padding: 0;
   height: 54px;
   width: 100%;
-  font-size: 1.4em;
-  font-family: "GillSans-Light";
+  font-size: 1.5em;
+  font-family: "GillSans-Regular";
   background-image: url("../images/bg-pod-header.png");
   background-position: -54px 50%;
   background-repeat: no-repeat;
@@ -509,7 +509,8 @@ a:hover {
 .body .col-1-of-3 {
   width: 33.333337%;
 }
-.body .news-list {
+.body .news-list,
+.body .news-page-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -557,6 +558,27 @@ a:hover {
 }
 .body .news-item .news-detail {
   margin-left: 98px;
+}
+.body .news-page-list .news-title {
+  margin-left: 0;
+  font-weight: normal;
+  padding-bottom: 2px;
+}
+.body .news-page-list .box {
+  position: relative;
+  min-height: 100px;
+  border-bottom: 1px solid #cccccc;
+}
+.body .news-page-list .news-date {
+  display: block;
+  padding-bottom: 8px;
+  color: #999999;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: "GillSans-Regular";
+}
+.body .news-page-list .news-item:nth-child(1) {
+  margin-top: 0;
 }
 .body .page-title {
   border-bottom: 1px solid #cccccc;
@@ -625,10 +647,12 @@ a:hover {
   float: left;
   width: 80px;
   padding-bottom: 3px;
+  color: #999999;
 }
 .body .page-title.search .search-meta .search-criteria dl dd {
   float: left;
-  color: #1da8cb;
+  font-weight: bold;
+  color: #6766cc;
 }
 .body .page-title.search .search-meta .search-order {
   float: right;
@@ -759,10 +783,20 @@ a:hover {
 .body .form-step .row:nth-last-child(1) {
   padding-bottom: 0;
 }
+.body .form-step .row.error {
+  padding-bottom: 7px;
+}
+.body .form-step .row.error input[type="text"],
+.body .form-step .row.error input[type="email"] {
+  border: 1px solid #e8555c;
+}
+.body .form-step .row.error span.error {
+  display: block;
+}
 .body .form-step label {
   width: 50%;
   padding: 0 30px 0 0;
-  line-height: 28px;
+  line-height: 26px;
   float: left;
   text-align: right;
   margin: 0;
@@ -779,6 +813,14 @@ a:hover {
   border: 1px solid #cccccc;
   -webkit-appearance: none;
   border-radius: 0;
+}
+.body .form-step span.error {
+  padding-top: 2px;
+  width: 50%;
+  float: right;
+  font-size: 0.9em;
+  color: #e8555c;
+  display: none;
 }
 .body .form-step select {
   width: 50%;
@@ -953,7 +995,7 @@ a:hover {
   padding-right: 15px;
 }
 .body .search-results .results-list li .venue-meta .venue-title {
-  color: #1da8cb;
+  color: #6766cc;
   font-family: "GillSans-Regular";
   font-size: 1.3em;
   margin: 0;
@@ -1028,7 +1070,7 @@ a:hover {
 }
 .body .reviews {
   display: block;
-  color: #1da8cb;
+  color: #6766cc;
   font-size: 0.9em;
   clear: right;
   float: right;
@@ -1132,10 +1174,10 @@ a:hover {
 }
 .body .venue-information .link.website {
   margin-bottom: 5px;
-  color: #1da8cb;
+  color: #6766cc;
 }
 .body .venue-information .link.email {
-  color: #1da8cb;
+  color: #6766cc;
 }
 .body .venue-information .link.phone {
   color: #000000;
@@ -1205,7 +1247,7 @@ a:hover {
   box-sizing: border-box;
   padding: 4px 25px 4px 0;
   white-space: nowrap;
-  color: #1da8cb;
+  color: #6766cc;
 }
 .body .venue-information .venue-reviews .reviews-table .main-header th .sort {
   display: inline-block;
@@ -1234,6 +1276,9 @@ a:hover {
   box-sizing: border-box;
   padding: 6px 6px 6px 0;
   border-top: 1px solid #eaeaea;
+}
+.body .venue-information .venue-reviews .reviews-table td.review-date, .body .venue-information .venue-reviews .reviews-table td.reviewer {
+  font-weight: bold;
 }
 .body .venue-information .venue-reviews .reviews-table td.digit {
   font-size: 1.3em;
@@ -1273,6 +1318,7 @@ a:hover {
 .body .venue-information .venue-reviews .reviews-table .snap-shot {
   padding-top: 10px;
   border-top: 1px solid #eaeaea;
+  color: #666;
 }
 .body .venue-information .venue-reviews .reviews-table span.attendee {
   color: #999;
@@ -1314,11 +1360,14 @@ a:hover {
 .body .venue-information .venue-reviews .reviews-table .show-hide-full-details:hover.shown {
   background: url("../images/bg-arrow-up-down-sprite-hover.png") right 6px no-repeat #00a351;
 }
+.body .venue-information .venue-reviews .reviews-table .criteria {
+  margin-bottom: 30px;
+}
 .body .venue-information .venue-reviews .reviews-table .criteria th {
   padding: 4px 15px 4px 100px;
   border-bottom: 1px solid #eaeaea;
   color: #1da8cb;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: normal;
   width: 100%;
 }
@@ -1622,6 +1671,10 @@ a:hover {
     width: 100%;
     float: none;
     padding: 4px 6px;
+  }
+  .body .form-step span.error {
+    width: 100%;
+    float: none;
   }
   .body .form-step select,
   .body .form-step textarea {
