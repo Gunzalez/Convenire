@@ -694,16 +694,16 @@ a:hover {
   padding-right: 40px;
 }
 .body .page-title.search .search-meta .search-order ul li a.active.asc {
-  background: url("../images/bg-arrow-up-down-sprite.png") right 13px no-repeat #00cc66;
+  background: url("../images/up-arrow.png") right 13px no-repeat #00cc66;
 }
 .body .page-title.search .search-meta .search-order ul li a.active.desc {
-  background: url("../images/bg-arrow-up-down-sprite.png") right -53px no-repeat #00cc66;
+  background: url("../images/down-arrow.png") right 13px no-repeat #00cc66;
 }
 .body .page-title.search .search-meta .search-order ul li a.active:hover.asc {
-  background: url("../images/bg-arrow-up-down-sprite-hover.png") right 13px no-repeat #00a351;
+  background: url("../images/up-arrow.png") right 13px no-repeat #00a351;
 }
 .body .page-title.search .search-meta .search-order ul li a.active:hover.desc {
-  background: url("../images/bg-arrow-up-down-sprite-hover.png") right -53px no-repeat #00a351;
+  background: url("../images/down-arrow.png") right 13px no-repeat #00a351;
 }
 .body .page-title.venue {
   position: relative;
@@ -1355,7 +1355,7 @@ a:hover {
   text-decoration: none;
   font-family: "GillSans-Regular";
   width: 100px;
-  background: url("../images/bg-arrow-up-down-sprite.png") right -60px no-repeat #00cc66;
+  background: url("../images/up-arrow.png") right 6px no-repeat #00cc66;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -1368,7 +1368,7 @@ a:hover {
   display: none;
 }
 .body .venue-information .venue-reviews .reviews-table .show-hide-full-details.shown {
-  background: url("../images/bg-arrow-up-down-sprite.png") right 6px no-repeat #00cc66;
+  background: url("../images/down-arrow.png") right 6px no-repeat #00cc66;
 }
 .body .venue-information .venue-reviews .reviews-table .show-hide-full-details.shown .show-details {
   display: none;
@@ -1377,10 +1377,10 @@ a:hover {
   display: inline-block;
 }
 .body .venue-information .venue-reviews .reviews-table .show-hide-full-details:hover {
-  background: url("../images/bg-arrow-up-down-sprite-hover.png") right -60px no-repeat #00a351;
+  background: url("../images/up-arrow.png") right 6px no-repeat #00a351;
 }
 .body .venue-information .venue-reviews .reviews-table .show-hide-full-details:hover.shown {
-  background: url("../images/bg-arrow-up-down-sprite-hover.png") right 6px no-repeat #00a351;
+  background: url("../images/down-arrow.png") right 6px no-repeat #00a351;
 }
 .body .venue-information .venue-reviews .reviews-table .criteria {
   margin-bottom: 30px;
