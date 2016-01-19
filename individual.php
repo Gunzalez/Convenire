@@ -1,3 +1,12 @@
+<?php
+$thumbnails = 1;
+if(isset($_GET["thumbnails"])){
+    $temp = intval($_GET["thumbnails"]);
+    if( $temp > 1){
+        $thumbnails = $temp;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +143,24 @@
                 </div>
 
                 <div class="venue-information">
-                    <div class="venue-details">
+
+                    <?php
+                    $singleThumbnailClass = "";
+                        if($thumbnails == 1){
+                            $singleThumbnailClass = ' single-thumbnail';
+                        }
+                    ?>
+
+                    <div class="venue-details<?php echo $singleThumbnailClass; ?>">
+
+                        <?php if($thumbnails == 1){ ?>
+
+                            <div class="venue-image-thumbnail-large">
+                                <a href="uploaded/venue-big-1.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-large.jpg" width="134" height="132" alt="" class="venue-image-thumbnail" /></a>
+                            </div>
+
+                        <?php } ?>
+
                         <div class="copy">
                             <a href="http://www.lowryhotel.com" class="link website" target="_blank">www.lowryhotel.com</a>
                             <dl>
@@ -153,17 +179,24 @@
                             </dl>
                             <span class="cright"></span>
                         </div>
+                        <div class="cleft"></div>
                     </div>
-                    <div class="venue-image-thumbnails">
-                        <ul class="thumbnails">
-                            <li><a href="uploaded/venue-big-1.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-1.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
-                            <li><a href="uploaded/venue-big-2.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-2.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
-                            <li><a href="uploaded/venue-big-3.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-3.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
-                            <li><a href="uploaded/venue-big-4.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-4.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
-                            <li><a href="#" class="more-or-less">+15</a></li>
-                        </ul>
-                        <span class="cleft"></span>
-                    </div>
+
+                    <?php if($thumbnails > 1){ ?>
+
+                        <div class="venue-image-thumbnails">
+                            <ul class="thumbnails">
+                                <li><a href="uploaded/venue-big-1.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-1.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
+                                <li><a href="uploaded/venue-big-2.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-2.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
+                                <li><a href="uploaded/venue-big-3.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-3.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
+                                <li><a href="uploaded/venue-big-4.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-4.jpg" width="67" height="66" alt="" class="venue-image-thumbnail" /></a></li>
+                                <li><a href="#" class="more-or-less">+15</a></li>
+                            </ul>
+                            <span class="cleft"></span>
+                        </div>
+
+                    <?php } ?>
+
                     <div class="venue-reviews">
                         <h2>User reviews</h2>
                         <table border="0" cellspacing="0" cellpadding="0" class="reviews-table">

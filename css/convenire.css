@@ -1159,10 +1159,6 @@ a:hover {
 .body .venue-information .copy dl {
   margin-bottom: 0;
 }
-.body .venue-information .venue-details {
-  position: relative;
-  padding-bottom: 20px;
-}
 .body .venue-information .venue-capacity {
   position: absolute;
   top: 0;
@@ -1231,6 +1227,32 @@ a:hover {
 }
 .body .venue-information .venue-image-thumbnails .more-or-less:hover {
   background: #f8f8f8;
+}
+.body .venue-information .venue-image-thumbnail-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.body .venue-information .venue-image-thumbnail-large a {
+  border: 1px solid #cccccc;
+  display: inline-block;
+}
+.body .venue-information .venue-image-thumbnail-large .venue-image-thumbnail {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.body .venue-information .venue-image-thumbnail-large .venue-image-thumbnail:hover {
+  opacity: 0.7;
+}
+.body .venue-information .venue-details {
+  position: relative;
+  padding-bottom: 20px;
+}
+.body .venue-information .venue-details.single-thumbnail .copy {
+  margin: 0 230px 0 150px;
+  min-height: 140px;
 }
 .body .venue-information .venue-reviews > h2 {
   border-bottom: 1px solid #cccccc;
@@ -1758,11 +1780,17 @@ a:hover {
   .body .venue-information .link.email {
     margin-top: 0;
   }
-  .body .venue-information .venue-image-thumbnails ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    float: left;
+  .body .venue-information .venue-image-thumbnail-large {
+    position: static;
+    margin-bottom: 10px;
+  }
+  .body .venue-information .venue-details {
+    position: relative;
+    padding-bottom: 0;
+  }
+  .body .venue-information .venue-details.single-thumbnail .copy {
+    margin: 0 0 10px 0;
+    min-height: auto;
   }
   .body .venue-information .venue-reviews > h2 {
     border-bottom: none;

@@ -228,7 +228,10 @@
 
             // sets up fancybox image enlargement
             if($(".fancybox").length > 0){
-                $(".fancybox").fancybox();
+                $(".fancybox").fancybox({
+                    'nextEffect': 'fade',
+                    'prevEffect': 'fade'
+                });
             }
 
             self.$showHideButtons.on('click', function (event) {
