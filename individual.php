@@ -146,20 +146,20 @@ if(isset($_GET["thumbnails"])){
 
                     <?php
                     $singleThumbnailClass = "";
-                        if($thumbnails == 1){
-                            $singleThumbnailClass = ' single-thumbnail';
-                        }
+                    if($thumbnails == 1){
+                        $singleThumbnailClass = ' single-thumbnail';
+                    }
                     ?>
 
                     <div class="venue-details<?php echo $singleThumbnailClass; ?>">
 
-                        <?php if($thumbnails == 1){ ?>
+                    <?php if($thumbnails == 1){ ?>
 
-                            <div class="venue-image-thumbnail-large">
-                                <a href="uploaded/venue-big-1.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-large.jpg" width="134" height="132" alt="" class="venue-image-thumbnail" /></a>
-                            </div>
+                        <div class="venue-image-thumbnail-large">
+                            <a href="uploaded/venue-big-1.jpg" class="fancybox" rel="group"><img src="uploaded/venue-thumbnail-large.jpg" width="134" height="132" alt="" class="venue-image-thumbnail" /></a>
+                        </div>
 
-                        <?php } ?>
+                    <?php } ?>
 
                         <div class="copy">
                             <a href="http://www.lowryhotel.com" class="link website" target="_blank">www.lowryhotel.com</a>
@@ -180,6 +180,7 @@ if(isset($_GET["thumbnails"])){
                             <span class="cright"></span>
                         </div>
                         <div class="cleft"></div>
+
                     </div>
 
                     <?php if($thumbnails > 1){ ?>
@@ -229,41 +230,115 @@ if(isset($_GET["thumbnails"])){
                                     <div id="review-id-1" class="full-detail">
                                         <h3>Criteria</h3>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
-                                        <tr>
-                                            <th scope="row">1) Contract <span>(overall score)</span></th>
-                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
-                                            <td><span class="scores"><span class="overall-score" style="width: 80%"></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
-                                            <td><span class="scores"><span class="overall-score" style="width: 89%"></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
-                                                    <tr>
-                                                        <th scope="row">Was there sufficient time?</th>
-                                                        <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">Was packaging provided?</th>
-                                                        <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">How well were issues handled in aftermath?</th>
-                                                        <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4) Accessibility of conference venue <span>(overall score)</span></th>
-                                            <td><span class="scores"><span class="overall-score" style="width: 48%"></span></span></td>
-                                        </tr>
-                                    </table>
+                                            <tr class="open-close" data-open-close="review-1-sub-criteria-1">
+                                                <th scope="row">1) Contract <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 100%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-1-sub-criteria-1" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="open-close" data-open-close="review-1-sub-criteria-2">
+                                                <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 80%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-1-sub-criteria-2" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="open-close" data-open-close="review-1-sub-criteria-3">
+                                                <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 73%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-1-sub-criteria-3" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="open-close" data-open-close="review-1-sub-criteria-4">
+                                                <th scope="row">4) Accessibility of conference venue <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 88%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-1-sub-criteria-4" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </td>
                             </tr>
@@ -284,39 +359,113 @@ if(isset($_GET["thumbnails"])){
                                     <div id="review-id-2" class="full-detail">
                                         <h3>Criteria</h3>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
-                                            <tr>
+                                            <tr class="open-close" data-open-close="review-2-sub-criteria-1">
                                                 <th scope="row">1) Contract <span>(overall score)</span></th>
-                                                <td><span class="scores"><span class="overall-score" style="width: 76%"></span></span></td>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 100%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
-                                                <td><span class="scores"><span class="overall-score" style="width: 80%"></span></span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
-                                                <td><span class="scores"><span class="overall-score" style="width: 89%"></span></span></td>
-                                            </tr>
-                                            <tr>
+                                            <tr id="review-2-sub-criteria-1" class="sub-criteria-container display-none">
                                                 <td colspan="2">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="criteria">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
                                                         <tr>
                                                             <th scope="row">Was there sufficient time?</th>
-                                                            <td><span class="scores"><span class="overall-score" style="width: 90%"></span></span></td>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">Was packaging provided?</th>
-                                                            <td><span class="scores"><span class="overall-score" style="width: 62%"></span></span></td>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">How well were issues handled in aftermath?</th>
-                                                            <td><span class="scores"><span class="overall-score" style="width: 68%"></span></span></td>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
                                                         </tr>
                                                     </table>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="open-close" data-open-close="review-2-sub-criteria-2">
+                                                <th scope="row">2) Setting up conditions <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 80%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-2-sub-criteria-2" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="open-close" data-open-close="review-2-sub-criteria-3">
+                                                <th scope="row">3) Winding up conditions <span>(overall score)</span></th>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 73%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-2-sub-criteria-3" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="open-close" data-open-close="review-2-sub-criteria-4">
                                                 <th scope="row">4) Accessibility of conference venue <span>(overall score)</span></th>
-                                                <td><span class="scores"><span class="overall-score" style="width: 88%"></span></span></td>
+                                                <td>
+                                                    <span class="scores">
+                                                        <span class="overall-score" style="width: 88%"></span>
+                                                    </span>
+                                                    <div class="cright"></div>
+                                                </td>
+                                            </tr>
+                                            <tr id="review-2-sub-criteria-4" class="sub-criteria-container display-none">
+                                                <td colspan="2">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sub-criteria">
+                                                        <tr>
+                                                            <th scope="row">Was there sufficient time?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 100%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Was packaging provided?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 92%"></span></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">How well were issues handled in aftermath?</th>
+                                                            <td><span class="scores"><span class="overall-score" style="width: 77%"></span></span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
                                             </tr>
                                         </table>
                                     </div>

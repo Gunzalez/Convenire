@@ -160,7 +160,7 @@
                 }
             });
 
-            // nav is initially hidden, shown after large images have preloaded
+            // nav is initially hidden, showing after large images have preloaded
             var imagesToPreload = [];
             $('a', self.$nav).each(function (i, obj) {
                 imagesToPreload.push($(obj).attr('data-featured-image'))
@@ -203,7 +203,7 @@
                 }
             });
 
-            // nav is initially hidden, shown after large images have preloaded
+            // nav is initially hidden, showing after large images have preloaded
             var imagesToPreload = [];
             $(self.aTag, self.$nav).each(function (i, obj) {
                 imagesToPreload.push($(obj).attr('data-large-image'));
@@ -216,12 +216,10 @@
 
     convenire.venue = {
         $venue: $('.venue-information'),
-        $stage: $('.venue-image-large', this.$venue),
-        $nav: $('.venue-image-thumbnails', this.venue),
-        aTag: 'a[data-large-image]',
-
-        // show and hide review full details
+        $listOfSubCriteriaContainers: $('.open-close', this.$venue),
         $showHideButtons: $('.show-hide-full-details', this.venue),
+        closeOtherCriteria: true,                   // Change to false to stop accordion style on Criteria
+        closeOtherSubCriteria: true,                // Change to false to stop accordion style on sub criteria
 
         init: function () {
             var self = this;
@@ -234,17 +232,47 @@
                 });
             }
 
+            $('.full-detail', self.$venue).each(function(i, obj){
+               $(obj).bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+                   $('.opened', $(obj)).removeClass('opened');
+                   $('.sub-criteria-container', $(obj)).addClass('display-none');
+               });
+            });
+
             self.$showHideButtons.on('click', function (event) {
                 event.preventDefault();
                 var viewId = $(this).data('view');
-                if (!$(this).hasClass('shown')) {
+                if (!$(this).hasClass('showing')) {
+                    if(self.closeOtherCriteria){
+                        self.$showHideButtons.removeClass('showing');
+                        $('.dropped-down', self.$venue).removeClass('dropped-down')
+                    }
                     $('#' + viewId, self.venue).addClass('dropped-down');
-                    window.location.hash = '#'+viewId;
-                    $(this).addClass('shown');
+                    $(this).addClass('showing');
+                    //window.location.hash = '#'+viewId;
                 } else {
                     $('#' + viewId, self.venue).removeClass('dropped-down');
-                    $(this).removeClass('shown');
+                    $(this).removeClass('showing');
                 }
+            });
+
+            self.$listOfSubCriteriaContainers.each(function(i, obj){
+                $(obj).on('click', function(){
+                    if(!$(obj).hasClass('opened')){
+                        var subCriteriaId = $(obj).attr('data-open-close');
+                        if(self.closeOtherSubCriteria){
+                            var $parent = $(obj).parents('table');
+                            $('.opened', $parent).removeClass('opened');
+                            $('.sub-criteria-container', $parent).addClass('display-none');
+                        }
+                        $('#'+subCriteriaId).removeClass('display-none');
+                        $(obj).addClass('opened');
+                    } else {
+                        var subCriteriaId = $(obj).attr('data-open-close');
+                        $('#'+subCriteriaId).addClass('display-none');
+                        $(obj).removeClass('opened');
+                    }
+                });
             });
         }
     };
