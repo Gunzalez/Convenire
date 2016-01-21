@@ -1465,6 +1465,15 @@ a:hover {
 .body .venue-information .venue-reviews .reviews-table .criteria .open-close.opened td:nth-last-child(1) {
   background: url("../images/bg-sub-criteria-arrow-up.png") right 8px no-repeat;
 }
+.body .venue-information .venue-reviews .reviews-table .criteria .open-close:hover td:nth-last-child(1) {
+  background: url("../images/bg-sub-criteria-arrow-down-hover.png") right 8px no-repeat;
+}
+.body .venue-information .venue-reviews .reviews-table .criteria .open-close:hover.opened td:nth-last-child(1) {
+  background: url("../images/bg-sub-criteria-arrow-up-hover.png") right 8px no-repeat;
+}
+.body .venue-information .venue-reviews .reviews-table .criteria .open-close:hover th {
+  text-decoration: underline;
+}
 .body #review-form {
   width: 100%;
   overflow: hidden;
