@@ -149,6 +149,10 @@
                 if (!$(this).hasClass('active')){
                     var $newImg = $('<img class="feature-image" src="' + $(this).attr('data-featured-image') +'" alt="' + $(this).find('img').attr('alt') + '" style="display:none" />');
 
+                    $('.feature-title', self.$stage).text($(this).find('img').attr('alt'));
+                    $('.feature-link', self.$stage).attr('href', $(this).attr('href'));
+
+
                     $('.feature-image', self.$stage).fadeOut(function(){
                         $(this).remove();
                     });
