@@ -147,13 +147,14 @@
             self.$nav.on('click', 'a', function (evt) {
                 evt.preventDefault();
                 if (!$(this).hasClass('active')){
-                    var $newImg = $('<img class="feature-image" src="' + $(this).attr('data-featured-image') +'" alt="' + $(this).find('img').attr('alt') + '" style="display:none" />');
 
-                    $('.feature-title', self.$stage).text($(this).find('img').attr('alt'));
-                    $('.feature-link', self.$stage).attr('href', $(this).attr('href'));
+                    var $newImg = $('<img class="featured-image" src="' + $(this).attr('data-featured-image') +'" alt="' + $(this).find('img').attr('alt') + '" style="display:none" />');
 
+                    $('.featured-title', self.$stage).text($(this).attr('data-featured-title'));
+                    $('.featured-subtitle', self.$stage).text($(this).attr('data-featured-subtitle'));
+                    $('.featured-link', self.$stage).attr('href', $(this).attr('href'));
 
-                    $('.feature-image', self.$stage).fadeOut(function(){
+                    $('.featured-image', self.$stage).fadeOut(function(){
                         $(this).remove();
                     });
                     $(self.$stage).append($newImg);

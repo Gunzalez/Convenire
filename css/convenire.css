@@ -256,7 +256,7 @@ a:hover {
 .hero .featured-large img {
   width: 100%;
 }
-.hero .featured-large .feature-image {
+.hero .featured-large .featured-image {
   position: absolute;
   top: 0;
   left: 0;
